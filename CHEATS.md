@@ -1,15 +1,21 @@
 # Fish
 
 ## fzf
+| Key Binding | Description |
+| --- | --- |
 | `C-r` | search in history |
 | `C-t` | search in files |
 
 # Vim
+| Key Binding | Description |
+| --- | --- |
 | `C-w w` or `C-w C-w` | switch between panes |
 | gt or C-PgDn | go to next buffer |
 | gT or C-PgUp | go to previous buffer |
 | {i}gt | go to tab in position i |
 ## NERDTree
+| Key Binding | Description |
+| --- | --- |
 | R | reload directory |
 | t | open in new tab |
 | T | open in new tab silently |
@@ -23,9 +29,13 @@
 | m d | delete the selected file/folder |
 | m m | move the selected file elsewhere |
 ## Tmuxline
+| Key Binding | Description |
+| --- | --- |
 | :Tmuxline airline | use airline theme in tmux |
 
 # Tmux
+| Key Binding | Description |
+| --- | --- |
 | C-a C-a | switch from last 2 windows |
 | C-a p | previous window |
 | C-a n | next window |
