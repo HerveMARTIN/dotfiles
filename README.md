@@ -1,4 +1,4 @@
-#Submodules
+# Submodules
 - git submodule add https://github.com/anishathalye/dotbot.git meta-dotbot
 - git submodule add https://github.com/VundleVim/Vundle.vim editors/vim/bundle/Vundle.vim
 
