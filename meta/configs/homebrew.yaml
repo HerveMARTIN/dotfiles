@@ -1,0 +1,4 @@
+- link:
+    ~/Brewfile: Brewfile
+- shell:
+    - 'brew bundle'

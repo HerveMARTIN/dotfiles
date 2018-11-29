@@ -1,0 +1,9 @@
+- link:
+    ~/.config/fish/config.fish: shells/fish/config.fish
+    ~/.config/fish/abbr.fish: shells/fish/abbr.fish
+    ~/.config/fish/functions/fisher.fish: shells/fish/functions/fisher.fish
+    ~/.config/fish/fishfile: shells/fish/fishfile
+- shell:
+    - "bash -c '[[ -d ~/.fzf ]] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf'"
+    - "~/.fzf/install"
+    - "fish -c 'fisher'"
