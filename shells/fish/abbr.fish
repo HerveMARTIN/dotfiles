@@ -26,9 +26,10 @@ abbr --add mux 'tmuxinator'
 
 # Big fingers
 abbr --add grpe 'grep'
-abbr --add vom 'vim'
+abbr --add vom 'nvim'
 
 # Misc
+abbr --add vim 'nvim'
 abbr --add cdw 'cd ~/Documents/workspace'
 abbr --add ll 'ls -alGh'
 abbr --add fr 'source ~/.config/fish/config.fish'

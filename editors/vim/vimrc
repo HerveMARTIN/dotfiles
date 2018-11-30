@@ -9,7 +9,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " Other plugins
-Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'w0rp/ale'
@@ -106,6 +106,9 @@ set rtp+=~/.fzf
 nmap <Leader>t :Tags<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>b :Buffers<CR>
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 " ALE
 let g:ale_sign_warning = '▲'
