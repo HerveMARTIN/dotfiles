@@ -7,6 +7,10 @@ set -g theme_nerd_fonts yes
 set -g FZF_FIND_FILE_COMMAND "ag -l --hidden --ignore .git"
 set -g -x EDITOR "vim"
 
+for repo in (/bin/ls -1 ~/Documents/workspace)
+  alias $repo "tmuxinator dev $repo"
+end
+
 source ~/.config/fish/abbr.fish
 
 if [ -f ~/.config/fish/aliases.fish ]
