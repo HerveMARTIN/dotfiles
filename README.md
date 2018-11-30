@@ -1,32 +1,66 @@
-# Submodules
-- git submodule add https://github.com/anishathalye/dotbot.git meta-dotbot
-- git submodule add https://github.com/VundleVim/Vundle.vim editors/vim/bundle/Vundle.vim
+# Dotfiles
 
-# DOTBOT
-- https://github.com/magicmonty/dotfiles_dotbot/
+Dotfile management using [Dotbot](https://github.com/anishathalye/dotbot).
+Structure of this repository is strongly inspired by [vsund](https://github.com/vsund/dotfiles).
 
-# Fish plugins and themes
-- https://github.com/jorgebucaran/fisher
+## Dependencies
 
-# Fuzy finder
-- https://github.com/jethrokuan/fzf
-- https://github.com/sharkdp/fd
-- https://github.com/ggreer/the_silver_searcher
+* git
+* python
+* tmux
+	* tmuxinator
+* vim
+* bash
+* fish
+  * fisher
 
-# TMUX Cheat sheet
-- https://tmuxcheatsheet.com/
-- https://scripter.co/command-to-every-pane-window-session-in-tmux/
+## Installation
 
-# VIM
-- https://statico.github.io/vim3.html
+```bash
+~$ git clone --recursive https://github.com/HerveMARTIN/dotfiles.git
+```
+or for me
+```bash
+~$ git clone --recursive git@github.com:HerveMARTIN/dotfiles.git
+```
+For installing a predefined profile:
 
-# GIT
-- https://github.com/ArnaudRinquin/blog/blob/master/2014-03-11-one-command-github-account-switch.md
+```bash
+~/.dotfiles$ ./install-profile <profile> [<configs...>]
+# see meta/profiles/ for available profiles
+```
 
-# TODO
-- tmux
-- tmuxinator
-- fisher plugins
-- screenrc
-- ssh/config
-- gitconfig
+For installing single configurations:
+
+```bash
+~/dotfiles$ ./install-standalone <configs...>
+# see meta/configs/ for available configurations
+```
+
+## Contents
+
+### Profiles
+
+```
+meta/profiles/
+├── osx
+└── ubuntu
+```
+
+### Dotbot configurations
+
+```
+meta/configs/
+├── bash.yaml
+├── fish.yaml
+├── git.yaml
+├── homebrew.yaml
+├── tmux.yaml
+└── vim.yaml
+```
+
+## Screenshots
+
+### Vim inside tmux
+![tmux-vim](meta/screenshots/tmux-vim.png)
+
