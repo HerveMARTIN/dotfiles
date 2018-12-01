@@ -3,3 +3,4 @@ editors/vim/backup/*
 editors/vim/swap/*
 editors/vim/undo/*
 !editors/vim/bundle/Vundle.vim
+editors/vim/init.vim

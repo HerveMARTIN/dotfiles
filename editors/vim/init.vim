@@ -1,1 +1,0 @@
-/home/hmartin/Documents/workspace/dotfiles/editors/vim/vimrc
