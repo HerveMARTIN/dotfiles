@@ -31,6 +31,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/fzf.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()            " required
 
@@ -39,28 +40,60 @@ let mapleader = ","
 let maplocalleader = ","
 
 syntax on
-filetype plugin indent on
+" file type recognition
+filetype on
+filetype plugin on
+filetype indent on
+
 set tabstop=2 shiftwidth=2 expandtab smarttab
+" Make it easier to work with buffers
+" http://vim.wikia.com/wiki/Easier_buffer_switching
 set hidden
+set confirm
+set autowriteall
+set wildmenu wildmode=full
 set backspace=2
+
+" 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+
+" Create temporary folders if they don't already exist
+if !isdirectory( expand( &undodir ) )
+    call mkdir( expand( &undodir ), "p" )
+endif
+if !isdirectory( expand( &backupdir ) )
+    call mkdir( expand( &backupdir ), "p" )
+endif
+if !isdirectory( expand( &directory ) )
+    call mkdir( expand( &directory ), "p" )
+endif
+
+" Shortcut to edit THIS configuration file: (e)dit (c)onfiguration
+nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
+
+" Shortcut to source (reload) THIS configuration file after editing it: (s)ource (c)onfiguraiton
+nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
+
+" Toggle line numbers
+nnoremap <leader>n :setlocal number!<cr>
 
 " Remap Ctrl-PageUp & Ctrl-PageDown for tmux compatibility
 nnoremap [6;5~ :bnext<CR>
 nnoremap [1;6B :bnext<CR>
 nnoremap [5;5~ :bprev<CR>
 nnoremap [1;6A :bprev<CR>
+nnoremap <C-l> :bn<CR>
+nnoremap <C-h> :bp<CR>
 
-" Super fast window movement shortcuts
-nmap <C-j> <C-W>j
-nmap <C-k> <C-W>k
-nmap <C-h> <C-W>h
-nmap <C-l> <C-W>l
+" Vim Indent
+set background=dark
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 " NERDTree
-let NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1
 let g:NERDTreeAutoDeleteBuffer = 1
 " Always open NERDTree
 "autocmd vimenter * NERDTree
@@ -73,9 +106,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Close automatically vim if the only remaining window is NERDTree
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Bind NERDTreeToogle to Ctrl-T
-nnoremap <C-T> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" Bind NERDTreeToogle to Space
+nnoremap <silent> <Space> :NERDTreeToggle<CR>
 
 " NERDTree File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -109,6 +141,8 @@ nmap <Leader>b :Buffers<CR>
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+" let g:deoplete#disable_auto_complete = 1
+" inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
 
 " ALE
 let g:ale_sign_warning = '▲'
@@ -140,10 +174,11 @@ let g:go_fmt_command = "goimports"
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_list_type = "quickfix"
 
+" GPG no undo,backup or swapfile
 if has("autocmd")
-        if has("persistent_undo")
-                autocmd BufNewFile,BufRead *.gpg set noundofile
-        endif
-        autocmd BufNewFile,BufRead *.gpg set nobackup
-        autocmd BufNewFile,BufRead *.gpg set noswapfile
+  if has("persistent_undo")
+    autocmd BufNewFile,BufRead *.gpg set noundofile
+  endif
+  autocmd BufNewFile,BufRead *.gpg set nobackup
+  autocmd BufNewFile,BufRead *.gpg set noswapfile
 endif
