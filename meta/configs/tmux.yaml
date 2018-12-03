@@ -2,4 +2,5 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmuxinator: tmux/tmuxinator
 - shell:
-  - 'gem install --bindir /usr/local/bin tmuxinator'
+  - 'mkdir -p .local/bin'
+  - 'gem install --bindir ~/.local/bin tmuxinator'
