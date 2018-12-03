@@ -63,13 +63,13 @@ set undodir=~/.vim/undo//
 
 " Create temporary folders if they don't already exist
 if !isdirectory( expand( &undodir ) )
-    call mkdir( expand( &undodir ), "p" )
+  call mkdir( expand( &undodir ), "p" )
 endif
 if !isdirectory( expand( &backupdir ) )
-    call mkdir( expand( &backupdir ), "p" )
+  call mkdir( expand( &backupdir ), "p" )
 endif
 if !isdirectory( expand( &directory ) )
-    call mkdir( expand( &directory ), "p" )
+  call mkdir( expand( &directory ), "p" )
 endif
 
 " Shortcut to edit THIS configuration file: (e)dit (c)onfiguration
@@ -93,6 +93,9 @@ nnoremap <C-h> :bp<CR>
 set background=dark
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+let g:indent_guides_auto_colors=0
+hi IndentGuidesEven ctermbg=238
+hi IndentGuidesOdd ctermbg=236
 
 " NERDTree
 let g:NERDTreeShowHidden=1
@@ -113,8 +116,8 @@ nnoremap <silent> <Space> :NERDTreeToggle<CR>
 
 " NERDTree File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
- exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
- exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
