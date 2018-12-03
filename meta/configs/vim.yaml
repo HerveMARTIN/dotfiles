@@ -5,4 +5,4 @@
     ~/.config/nvim: editors/vim
     ~/.config/nvim/init.vim: editors/vim/vimrc
 - shell:
-    - [vim -c 'PlugInstall' +qall, Installing vim plugins]
+    - [vim -c 'PluginInstall' +qall, Installing vim plugins]
