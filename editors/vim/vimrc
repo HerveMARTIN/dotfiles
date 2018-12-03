@@ -9,7 +9,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " Other plugins
-Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'w0rp/ale'
@@ -32,6 +31,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/fzf.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 if has('nvim')
+  Plugin 'Shougo/deoplete.nvim'
   Plugin 'fatih/vim-go'
 endif
 
