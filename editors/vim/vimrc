@@ -30,6 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/fzf.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mileszs/ack.vim'
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim'
   Plugin 'fatih/vim-go'
@@ -88,6 +89,9 @@ nnoremap [5;5~ :bprev<CR>
 nnoremap [1;6A :bprev<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
+
+" vim ack
+let g:ackprg = 'ag --vimgrep'
 
 " Vim Indent
 set background=dark
