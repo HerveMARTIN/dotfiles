@@ -9,7 +9,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " Other plugins
-Plugin 'joshdick/onedark.vim'
+" Plugin 'joshdick/onedark.vim'
+Plugin 'KeitaNakamura/neodark.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'w0rp/ale'
@@ -50,7 +51,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-colorscheme onedark
+colorscheme neodark
 
 set tabstop=2 shiftwidth=2 expandtab smarttab
 " Make it easier to work with buffers
