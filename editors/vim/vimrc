@@ -1,51 +1,43 @@
 set shell=/bin/bash
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" Other plugins
-Plugin 'KeitaNakamura/neodark.vim'
-Plugin 'w0rp/ale'
-Plugin 'vim-airline/vim-airline'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'godlygeek/tabular'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-fugitive'
-Plugin 'rodjek/vim-puppet'
-Plugin 'honza/vim-snippets'
-Plugin 'jamessan/vim-gnupg'
-Bundle 'edkolev/tmuxline.vim'
-Plugin 'zivyangll/git-blame.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'junegunn/fzf.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'mileszs/ack.vim'
-Plugin 'dag/vim-fish'
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'fatih/vim-go'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call vundle#end()            " required
+call plug#begin('~/.vim/plugged')
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'w0rp/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'godlygeek/tabular'
+Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-fugitive'
+Plug 'rodjek/vim-puppet'
+Plug 'honza/vim-snippets'
+Plug 'jamessan/vim-gnupg'
+Plug 'edkolev/tmuxline.vim'
+Plug 'zivyangll/git-blame.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'junegunn/fzf.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'mileszs/ack.vim'
+Plug 'dag/vim-fish'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'fatih/vim-go'
+endif
+call plug#end()
 
 " For any plugins that use this, make their keymappings use comma
 let mapleader = ","
 let maplocalleader = ","
-
-syntax on
-" file type recognition
-filetype on
-filetype plugin on
-filetype indent on
 
 colorscheme neodark
 

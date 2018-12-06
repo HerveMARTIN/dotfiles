@@ -1,6 +1,3 @@
-[submodule "editors/vim/bundle/Vundle.vim"]
-	path = editors/vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim
 [submodule "meta/dotbot"]
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot.git
