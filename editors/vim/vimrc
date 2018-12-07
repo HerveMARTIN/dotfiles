@@ -195,8 +195,10 @@ let g:lightline = {
   \ },
 \ }
 
-if !has('nvim')
-  autocmd VimEnter * Tmuxline lightline
+if exists('$TMUX')
+  if !has('nvim')
+    autocmd VimEnter * Tmuxline lightline
+  endif
 endif
 
 set showtabline=2
