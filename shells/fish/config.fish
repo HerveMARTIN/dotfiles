@@ -16,3 +16,7 @@ source ~/.config/fish/abbr.fish
 if [ -f ~/.config/fish/aliases.fish ]
   source ~/.config/fish/aliases.fish
 end
+
+if [ -f ~/.config/fish/completions/pass.fish ]
+  source ~/.config/fish/completions/pass.fish
+end
