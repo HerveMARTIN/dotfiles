@@ -33,6 +33,7 @@ if has('nvim')
   Plug 'fatih/vim-go'
 else
   Plug 'itchyny/lightline.vim'
+  Plug 'taohexxx/lightline-buffer'
 endif
 Plug 'edkolev/tmuxline.vim'
 call plug#end()
@@ -167,16 +168,33 @@ let g:lightline = {
   \ 'colorscheme': 'one',
   \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ], ],
+  \ },
+  \ 'tabline': {
+  \   'left': [ [ 'bufferinfo' ],
+  \             [ 'separator' ],
+  \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+  \   'right': [ [ 'close' ], ],
+  \ },
+  \ 'component_expand': {
+  \   'buffercurrent': 'lightline#buffer#buffercurrent',
+  \   'bufferbefore': 'lightline#buffer#bufferbefore',
+  \   'bufferafter': 'lightline#buffer#bufferafter',
+  \ },
+  \ 'component_type': {
+  \   'buffercurrent': 'tabsel',
+  \   'bufferbefore': 'raw',
+  \   'bufferafter': 'raw',
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'fugitive#head'
+  \   'gitbranch': 'fugitive#head',
+  \   'bufferinfo': 'lightline#buffer#bufferinfo',
+  \ },
+  \ 'component': {
+  \   'separator': '',
   \ },
 \ }
-let g:lightline.tabline = {
-  \ 'left': [ [ 'tabs' ] ],
-  \ 'right': [ [ 'close' ] ]
-\ }
+
 set showtabline=2
 
 " git blame
