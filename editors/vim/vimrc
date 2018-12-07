@@ -166,6 +166,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ }
+set showtabline=2
 
 " git blame
 nnoremap <C-b> :call gitblame#echo()<CR>
