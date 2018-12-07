@@ -165,7 +165,18 @@ let g:airline#extensions#tabline#enabled = 1
 " Lightline
 let g:lightline = {
   \ 'colorscheme': 'wombat',
-  \ }
+  \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'fugitive#head'
+  \ },
+\ }
+let g:lightline.tabline = {
+  \ 'left': [ [ 'tabs' ] ],
+  \ 'right': [ [ 'close' ] ]
+\ }
 set showtabline=2
 
 " git blame
