@@ -164,7 +164,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Lightline
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'one',
   \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
