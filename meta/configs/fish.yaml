@@ -5,6 +5,4 @@
     ~/.config/fish/fishfile: shells/fish/fishfile
     ~/.config/fish/completions/pass.fish: shells/fish/completions/pass.fish
 - shell:
-    - "bash -c '[[ -d ~/.fzf ]] || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf'"
-    - "~/.fzf/install"
     - "fish -c 'fisher'"
