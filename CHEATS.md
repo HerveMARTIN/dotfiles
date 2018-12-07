@@ -10,6 +10,8 @@
 | Key Binding | Description |
 | --- | --- |
 | Normal | --- |
+| `>>` | Indent line |
+| `<<` | Unindent line |
 | `C-w w` or `C-w C-w` | switch between panes |
 | `C-l` | go to next buffer |
 | `C-h` | go to previous buffer |
