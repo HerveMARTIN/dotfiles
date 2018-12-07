@@ -1,6 +1,2 @@
 - link:
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmuxinator: tmux/tmuxinator
-- shell:
-  - 'mkdir -p ~/.local/bin'
-  - 'gem install --bindir ~/.local/bin tmuxinator'

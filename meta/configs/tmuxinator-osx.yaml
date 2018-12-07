@@ -1,0 +1,5 @@
+- link:
+    ~/.tmuxinator: tmux/tmuxinator
+- shell:
+  - 'mkdir -p ~/.local/bin'
+  - 'gem install --bindir ~/.local/bin tmuxinator'
