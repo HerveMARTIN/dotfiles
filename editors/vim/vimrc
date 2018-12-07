@@ -155,20 +155,25 @@ let g:deoplete#enable_at_startup = 1
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
 
-"airline
+" Airline
 set laststatus=2
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
-"git blame
+" Lightline
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ }
+
+" git blame
 nnoremap <C-b> :call gitblame#echo()<CR>
 
 " for ctrlspace
 let g:airline_exclude_preview = 1
 
-"vim-go
+" vim-go
 if has('nvim')
   let g:go_highlight_functions = 1
   let g:go_highlight_methods = 1
