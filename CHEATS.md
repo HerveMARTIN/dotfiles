@@ -9,15 +9,23 @@
 # Vim
 | Key Binding | Description |
 | --- | --- |
+| Normal | --- |
 | `C-w w` or `C-w C-w` | switch between panes |
-| `C-PgDn` | go to next buffer |
-| `C-PgUp` | go to previous buffer |
+| `C-l` | go to next buffer |
+| `C-h` | go to previous buffer |
+| `v` | go to visual mode |
+| `V` | go to visual line mode |
+| `C-v` | go to visual block mode |
+| Visual | --- |
+| `f x` | select to the next 'x' character |
+| `e` | select to the end of word |
+| `$` | select to the end of line |
+| `i "` | select everything between the double quote |
+| `o` | go to the opposite corner of the block selection |
 ## NERDTree
 | Key Binding | Description |
 | --- | --- |
 | `R` | reload directory |
-| `t` | open in new tab |
-| `T` | open in new tab silently |
 | `i` | open in split view |
 | `s` | open in vsplit view |
 | `C` | set selected folder as root in tree view |
