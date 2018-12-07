@@ -195,6 +195,10 @@ let g:lightline = {
   \ },
 \ }
 
+if !has('nvim')
+  autocmd VimEnter * Tmuxline lightl
+endif
+
 set showtabline=2
 
 " git blame
