@@ -11,12 +11,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'Xuyuanp/nerdtree-git-plugin' , { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'godlygeek/tabular'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'tpope/vim-fugitive'
 Plug 'rodjek/vim-puppet'
 Plug 'honza/vim-snippets'
