@@ -13,6 +13,8 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
 Plug 'godlygeek/tabular'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'tpope/vim-fugitive'
@@ -28,14 +30,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mileszs/ack.vim'
 Plug 'dag/vim-fish'
 if has('nvim')
-  Plug 'vim-airline/vim-airline'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'fatih/vim-go'
-else
-  Plug 'itchyny/lightline.vim'
-  Plug 'taohexxx/lightline-buffer'
 endif
-Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 " For any plugins that use this, make their keymappings use comma
@@ -77,6 +74,9 @@ nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
 
 " Shortcut to source (reload) THIS configuration file after editing it: (s)ource (c)onfiguraiton
 nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
+
+" Shortcuts to launch PlugInstall and PlugClean
+nnoremap <silent> <leader>pi :PlugInstall<CR>
 
 " Toggle line numbers
 nnoremap <leader>n :setlocal number!<cr>
@@ -158,50 +158,12 @@ let g:ale_sign_error = '✗'
 
 " Airline
 set laststatus=2
-let g:airline#extensions#syntastic#enabled = 1
+set showtabline=2
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-
-" Lightline
-let g:lightline = {
-  \ 'colorscheme': 'one',
-  \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ], ],
-  \ },
-  \ 'tabline': {
-  \   'left': [ [ 'bufferinfo' ],
-  \             [ 'separator' ],
-  \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
-  \   'right': [ [ 'close' ], ],
-  \ },
-  \ 'component_expand': {
-  \   'buffercurrent': 'lightline#buffer#buffercurrent',
-  \   'bufferbefore': 'lightline#buffer#bufferbefore',
-  \   'bufferafter': 'lightline#buffer#bufferafter',
-  \ },
-  \ 'component_type': {
-  \   'buffercurrent': 'tabsel',
-  \   'bufferbefore': 'raw',
-  \   'bufferafter': 'raw',
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'fugitive#head',
-  \   'bufferinfo': 'lightline#buffer#bufferinfo',
-  \ },
-  \ 'component': {
-  \   'separator': '',
-  \ },
-\ }
-
-if exists('$TMUX')
-  if !has('nvim')
-    autocmd VimEnter * Tmuxline lightline
-  endif
-endif
-
-set showtabline=2
+let g:airline#extensions#ale#enabled = 1
 
 " git blame
 nnoremap <C-b> :call gitblame#echo()<CR>

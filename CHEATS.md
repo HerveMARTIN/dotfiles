@@ -15,6 +15,14 @@
 | `C-w w` or `C-w C-w` | switch between panes |
 | `C-l` | go to next buffer |
 | `C-h` | go to previous buffer |
+| `C-b` | git blame |
+| `, n` | Toggle line numbers |
+| `, f` | fuzzy find files |
+| `, b` | fuzzy find buffers |
+| `, e c` | Edit vimrc | 
+| `, s c` | Source vimrc | 
+| `, p i` | Run PlugInstall |
+| `Space` | Toggle NERDTree |
 | `v` | go to visual mode |
 | `V` | go to visual line mode |
 | `C-v` | go to visual block mode |
