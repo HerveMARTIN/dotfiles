@@ -77,6 +77,7 @@ nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
 
 " Shortcuts to launch PlugInstall and PlugClean
 nnoremap <silent> <leader>pi :PlugInstall<CR>
+nnoremap <silent> <leader>pc :PlugClean<CR>
 
 " Toggle line numbers
 nnoremap <leader>n :setlocal number!<cr>
