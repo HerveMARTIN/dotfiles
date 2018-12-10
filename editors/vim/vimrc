@@ -26,6 +26,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mileszs/ack.vim'
@@ -92,7 +93,7 @@ nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
 
 " vim ack
-let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'rg --vimgrep --no-heading'
 
 " Vim Indent
 set background=dark
@@ -148,6 +149,13 @@ set rtp+=~/.fzf
 nmap <Leader>t :Tags<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>b :Buffers<CR>
+
+" ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  set grepprg=rg\ --vimgrep
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1

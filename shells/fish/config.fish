@@ -4,7 +4,8 @@ end
 set -g -x fish_greeting ''
 
 set -g theme_nerd_fonts yes
-set -g FZF_FIND_FILE_COMMAND "ag -l --hidden --ignore .git"
+set -g FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
+set -g FZF_FIND_FILE_COMMAND "rg --files --hidden --follow --glob '!.git/*'"
 set -g -x EDITOR "vim"
 
 for repo in (/bin/ls -1 ~/Documents/workspace)
