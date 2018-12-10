@@ -13,3 +13,5 @@
     co = checkout
     pf = push --force-with-lease
     st = status
+[core]
+	excludesfile = ~/.gitignore_global
