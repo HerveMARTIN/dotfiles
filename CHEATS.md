@@ -22,6 +22,7 @@
 | `, e c` | Edit vimrc | 
 | `, s c` | Source vimrc | 
 | `, p i` | Run PlugInstall |
+| `, c Space` | Toggle comment |
 | `Space` | Toggle NERDTree |
 | `v` | go to visual mode |
 | `V` | go to visual line mode |
