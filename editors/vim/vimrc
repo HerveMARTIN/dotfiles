@@ -31,6 +31,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mileszs/ack.vim'
 Plug 'dag/vim-fish'
+Plug 'ryanoasis/vim-devicons'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'fatih/vim-go'
