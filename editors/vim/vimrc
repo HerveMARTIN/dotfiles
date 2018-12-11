@@ -93,11 +93,9 @@ nnoremap [1;6A :bprev<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
 
-" vim ack
-let g:ackprg = 'rg --vimgrep --no-heading'
+set background=dark
 
 " Vim Indent
-set background=dark
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:indent_guides_auto_colors=0
@@ -156,9 +154,11 @@ nmap <Leader>t :Tags<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>b :Buffers<CR>
 
+" vim ack
+let g:ackprg = 'rg --vimgrep --no-heading'
+
 " ripgrep
 if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
   set grepprg=rg\ --vimgrep
   command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 endif
