@@ -83,7 +83,8 @@ nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>pc :PlugClean<CR>
 
 " Toggle line numbers
-nnoremap <leader>n :setlocal number!<cr>
+nnoremap <leader>n :setlocal number!<CR>
+nnoremap <leader>r :setlocal relativenumber!<CR>
 
 " Remap Ctrl-PageUp & Ctrl-PageDown for tmux compatibility
 nnoremap [6;5~ :bnext<CR>
@@ -103,7 +104,7 @@ hi IndentGuidesEven ctermbg=238
 hi IndentGuidesOdd ctermbg=236
 
 " NERDTree
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 " Always open NERDTree
 "autocmd vimenter * NERDTree
@@ -182,7 +183,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
 " git blame
-nnoremap <C-b> :call gitblame#echo()<CR>
+nnoremap <Leader>gb :call gitblame#echo()<CR>
 
 " for ctrlspace
 let g:airline_exclude_preview = 1

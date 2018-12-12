@@ -10,20 +10,41 @@
 | Key Binding | Description |
 | --- | --- |
 | Normal | --- |
-| `>>` | Indent line |
-| `<<` | Unindent line |
+| `zz`/`zt`/`zb` | set current line at top/middle/bottom of the screen |
+| `C-y`/`C-e` | scroll one line |
+| `C-u`/`C-d` | scroll half-page |
+| `C-b`/`C-f` | scroll full-page |
+| `0`/`$` | go to the beginning/end of line |
+| `^`/`g_` | go to the first/last char on line |
+| `e`/`E` | go to the end of next "word"/"big word" (including '-') |
+| `w`/`W` | go to the beginning of next "word"/"big word" (including '-') |
+| `b`/`B` | go to the beginning of last "word"/"big word" (including '-') |
+| `{`/`}` | go to next/previous paragraph |
+| `' '` | go back to the line where the cursor was before the last go to |
+| `' .` | go to last changed where the cursor was before the last go to |
+| `f x` | find the next 'x' character |
+| `*` | search for current word and go to next occurence |
+| `#` | search for current word and go to previous occurence |
+| `gd` | go to definition (first occurence) of current word |
+| `%` | go to corresponding (){}[] |
+| `dfx` | delete text to the next occurence of 'x' included |
+| `qx` | record macro named x |
+| `@x` | call marco named x |
+| `>>` | indent line |
+| `<<` | unindent line |
 | `C-w w` or `C-w C-w` | switch between panes |
 | `C-l` | go to next buffer |
 | `C-h` | go to previous buffer |
 | `C-b` | git blame |
-| `, n` | Toggle line numbers |
+| `, n` | toggle line numbers |
+| `, r` | toggle relative line numbers |
 | `, f` | fuzzy find files |
 | `, b` | fuzzy find buffers |
-| `, e c` | Edit vimrc | 
-| `, s c` | Source vimrc | 
-| `, p i` | Run PlugInstall |
-| `, c Space` | Toggle comment |
-| `Space` | Toggle NERDTree |
+| `, e c` | edit vimrc | 
+| `, s c` | source vimrc | 
+| `, p i` | run PlugInstall |
+| `, c Space` | toggle comment |
+| `Space` | toggle NERDTree |
 | `v` | go to visual mode |
 | `V` | go to visual line mode |
 | `C-v` | go to visual block mode |
@@ -33,6 +54,7 @@
 | `$` | select to the end of line |
 | `i "` | select everything between the double quote |
 | `o` | go to the opposite corner of the block selection |
+
 ## NERDTree
 | Key Binding | Description |
 | --- | --- |
@@ -44,6 +66,7 @@
 | `m a` | add a new file under the selected folder |
 | `m d` | delete the selected file/folder |
 | `m m` | move the selected file elsewhere |
+
 ## Tmuxline
 | Command | Description |
 | --- | --- |
