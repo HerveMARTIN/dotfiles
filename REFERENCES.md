@@ -19,6 +19,7 @@
 
 # VIM
 - https://statico.github.io/vim3.html
+- https://pqrs.org/osx/karabiner/
 
 # GIT
 - https://github.com/ArnaudRinquin/blog/blob/master/2014-03-11-one-command-github-account-switch.md
@@ -26,7 +27,6 @@
 # TODO
 - tmux
 - tmuxinator
-- fisher plugins
 - screenrc
 - ssh/config
 - gitconfig

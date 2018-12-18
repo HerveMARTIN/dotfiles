@@ -1,16 +1,23 @@
 # Fish
+| Key Binding | Description |
+| --- | --- |
+| `Alt-Left/Right` | go to prev/next word in the command line, or popd/pushd if command line is empty |
+| `Alt-Up` | get last part of previous command (eq. to $! in bash) |
 
 ## fzf
 | Key Binding | Description |
 | --- | --- |
 | `C-r` | search in history |
 | `C-t` | search in files |
-
 # Vim
+![cheats](http://www.nathael.org/Data/vi-vim-cheat-sheet.svg)
+
 | Key Binding | Description |
 | --- | --- |
 | Normal | --- |
 | `zz`/`zt`/`zb` | set current line at top/middle/bottom of the screen |
+| `ZZ` | save and quit |
+| `ZQ` | quit without saving |
 | `C-y`/`C-e` | scroll one line |
 | `C-u`/`C-d` | scroll half-page |
 | `C-b`/`C-f` | scroll full-page |
