@@ -19,6 +19,7 @@
 
 # VIM
 - https://statico.github.io/vim3.html
+- https://www.youtube.com/watch?v=b6muaaqO-ns
 - https://pqrs.org/osx/karabiner/
 
 # GIT
