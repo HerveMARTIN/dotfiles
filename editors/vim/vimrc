@@ -44,7 +44,7 @@ let maplocalleader = ","
 
 colorscheme neodark
 
-set tabstop=2 shiftwidth=2 expandtab smarttab
+set tabstop=2 shiftwidth=2 expandtab
 " Make it easier to work with buffers
 " http://vim.wikia.com/wiki/Easier_buffer_switching
 set hidden
@@ -102,6 +102,12 @@ nnoremap [1;6A :bprev<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
 
+" Quick pane resize
+map <silent> <A-Left> <C-w><
+map <silent> <A-Right> <C-w>>
+map <silent> <A-Down> <C-W>-
+map <silent> <A-Up> <C-W>+
+
 set background=dark
 
 " Vim Indent
@@ -114,6 +120,10 @@ hi IndentGuidesOdd ctermbg=236
 " NERDTree
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeAutoDeleteBuffer = 1
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+let g:NERDTreeDirArrowExpandable = "\u00a0"
+let g:NERDTreeDirArrowCollapsible = "\u00a0"
 " Always open NERDTree
 "autocmd vimenter * NERDTree
 " Open NERDTree when starting vim with no cmd line args
