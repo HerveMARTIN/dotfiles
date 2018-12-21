@@ -20,6 +20,7 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'tpope/vim-fugitive'
 Plug 'rodjek/vim-puppet'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jamessan/vim-gnupg'
 Plug 'zivyangll/git-blame.vim'
@@ -101,6 +102,7 @@ nnoremap [5;5~ :bprev<CR>
 nnoremap [1;6A :bprev<CR>
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
+nnoremap <C-m> :b#<CR>
 
 " Quick pane resize
 map <silent> <A-Left> <C-w><
@@ -182,7 +184,7 @@ if executable('rg')
   command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 endif
 
-" Use deoplete.
+" Deoplete.
 let g:deoplete#enable_at_startup = 1
 " let g:deoplete#disable_auto_complete = 1
 " inoremap <expr> <C-n>  deoplete#mappings#manual_complete()
@@ -190,6 +192,11 @@ let g:deoplete#enable_at_startup = 1
 " ALE
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " Airline
 set laststatus=2
