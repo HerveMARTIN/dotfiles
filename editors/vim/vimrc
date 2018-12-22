@@ -92,23 +92,31 @@ nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>pc :PlugClean<CR>
 
 " Toggle line numbers
-nnoremap <leader>n :setlocal number!<CR>
-nnoremap <leader>r :setlocal relativenumber!<CR>
+nnoremap <silent> <leader>n :setlocal number!<CR>
+nnoremap <silent> <leader>r :setlocal relativenumber!<CR>
 
-" Remap Ctrl-PageUp & Ctrl-PageDown for tmux compatibility
-nnoremap [6;5~ :bnext<CR>
-nnoremap [1;6B :bnext<CR>
-nnoremap [5;5~ :bprev<CR>
-nnoremap [1;6A :bprev<CR>
+" Edit Puppetfile
+nnoremap <silent> <leader>ep :e Puppetfile<CR>
+
+" Buffer management
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
 nnoremap <C-m> :b#<CR>
+nnoremap <silent> <leader>bd :bd<CR>
+
+" Edit Snippet
+nnoremap <silent> <leader>es :UltiSnipsEdit<CR>
 
 " Quick pane resize
 map <silent> <A-Left> <C-w><
 map <silent> <A-Right> <C-w>>
 map <silent> <A-Down> <C-W>-
 map <silent> <A-Up> <C-W>+
+
+" fzf mapping
+nmap <Leader>t :Tags<CR>
+nmap <Leader>f :Files<CR>
+nmap <Leader>bs :Buffers<CR>
 
 set background=dark
 
@@ -171,9 +179,6 @@ let g:NERDDefaultAlign = 'left'
 
 " fzf
 set rtp+=~/.fzf
-nmap <Leader>t :Tags<CR>
-nmap <Leader>f :Files<CR>
-nmap <Leader>b :Buffers<CR>
 
 " vim ack
 let g:ackprg = 'rg --vimgrep --no-heading'
@@ -195,8 +200,7 @@ let g:ale_sign_error = '✗'
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 " Airline
 set laststatus=2
