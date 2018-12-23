@@ -2,3 +2,14 @@ snippet _skel "YAML" b
 ---
 $0
 endsnippet
+
+snippet mux "Tmuxinator session definition" b
+# ~/.tmuxinator/{$1:slug}.yml
+
+name: $1
+root: <%= ENV['CODE'] %>/$1
+
+windows:
+	- editor: <%= ENV['EDITOR'] %>
+	- shell:
+endsnippet
