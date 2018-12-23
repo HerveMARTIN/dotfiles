@@ -106,6 +106,7 @@ nnoremap <silent> <leader>bd :bd<CR>
 
 " Edit Snippet
 nnoremap <silent> <leader>es :UltiSnipsEdit<CR>
+autocmd BufNewFile * call snippet#InsertSkeleton()
 
 " Quick pane resize
 map <silent> <A-Left> <C-w><
