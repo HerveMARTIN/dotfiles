@@ -9,83 +9,148 @@ class `!v my#puppet#path_to_class_name()` {
 endsnippet
 
 snippet file "File" b
-	file { "${1:filename}":
-		ensure => "${3:file}",
-		source => "puppet:///${2:source}",
-		owner  => "${4:root}",
-		group  => "${5:root}",
-		mode   => '${6:0755}';
-	}
+file { "${1:filename}":
+	ensure => "${3:file}",
+	source => "puppet:///modules/${2:source}",
+	owner  => "${4:root}",
+	group  => "${5:root}",
+	mode   => '${6:0644}';
+}
 endsnippet
+
+snippet service "Service" b
+service { "${1:service}" :
+	ensure    => running,
+	enable    => true,
+	require   => ${2:Package['},
+}
+endsnippet
+
 snippet exec "Exec" b
-	exec { "${1:name}":
-		command     => "${2:command}",
-		refreshonly => "${3:true}",
-		onlyif      => "${4:run_if_true}",
-		unless      => "${5:run_if_false}",
-	}
+exec { "${1:name}":
+	command     => "${2:command}",
+	refreshonly => "${3:true}",
+	onlyif      => "${4:run_if_true}",
+	unless      => "${5:run_if_false}",
+}
 endsnippet
 
 snippet package "Package" b
-	package { "${1:package_name}":
-		ensure   => "${2:installed}";
-		provider => "yum",
-	}
+package { "${1:package_name}":
+	ensure   => "${2:installed}";
+	provider => "yum",
+}
 endsnippet
 
 snippet cron "Cron" b
-	cron { "${1:name}":
-		command => "${2:command}",
-		hour    => ${3:hour},
-		minute  => ${4:minute},
-		day     => ${5:day};
-	}
+cron { "${1:name}":
+	command => "${2:command}",
+	hour    => ${3:hour},
+	minute  => ${4:minute},
+	day     => ${5:day};
+}
+endsnippet
+
+snippet user "User" b
+user { "${1:user}":
+	ensure      => present,
+	comment     => "${2:$1}",
+	managehome  => true,
+	home        => "${0:/home/$1}",
+}
+endsnippet
+
+snippet group "Group" b
+group { "${1:group}":
+	ensure => ${0:present},
+}
+endsnippet
+
+snippet notify "Notify" b
+	notify { "${1:message}": }
 endsnippet
 
 snippet class "Class" b
-	# Class:: $1
-	#
-	#
-	class ${1:classname} {
-	  ${2:#code...}
-	} # Class:: $1
+# Class:: $1
+#
+#
+class ${1:classname} {
+	${2:#code...}
+} # Class:: $1
 endsnippet
 
 snippet def "Define" b
-	# Define:: $1
-	# Args:: $2
-	#
-	define ${1:defname}(${2:args}) {
-	  ${3:#code}
-	} # Define: $1
+# Define:: $1
+# Args:: $2
+#
+define ${1:defname}(${2:args}) {
+	${3:#code}
+} # Define: $1
 endsnippet
 
 snippet inc "Include" b
-	include "${1}"
+include "${1}"
 endsnippet
 
 snippet #head "Module head with comment" b
-	# Module:: ${1:modulename}
-	# Manifest:: ${2:init.pp}
-	#
-	# Author:: `system("git config user.name")` (<`system("git config user.email")`>)
-	# Date:: `system("ruby -e 'puts Time.now'")`
-	#
-	${3}
+# Module:: ${1:modulename}
+# Manifest:: ${2:init.pp}
+#
+# Author:: `system("git config user.name")` (<`system("git config user.email")`>)
+# Date:: `system("ruby -e 'puts Time.now'")`
+#
+${3}
 endsnippet
 
 snippet #class "Class header with comment" b
-	# Module:: ${1:modulename}
-	# Class: ${2:classname}
-	#
-	# ${3:description}
-	#
-	# Author:: `system("git config user.name")` (<`system("git config user.email")`>)
-	# Date:: `system("ruby -e 'puts Time.now'")`
-	#
-	class $1::$2
-	{
+# Module:: ${1:modulename}
+# Class: ${2:classname}
+#
+# ${3:description}
+#
+# Author:: `system("git config user.name")` (<`system("git config user.email")`>)
+# Date:: `system("ruby -e 'puts Time.now'")`
+#
+class $1::$2
+{
 
-	}
+}
 endsnippet
 
+snippet case "Case" b
+case $${1:variable} {
+	default: { ${0} }
+}
+endsnippet
+
+snippet ife "If/Else" b
+if $${1:variable} {
+	${2}
+} else {
+	${0}
+}
+endsnippet
+
+snippet if "If" b
+if $${1:variable} {
+	${0}
+}
+endsnippet
+
+snippet ifd "If defined" b
+if defined(${1:Resource}["${2:name}"]) {
+	${0}
+}
+endsnippet
+
+snippet ifnd "If not defined" b
+if !defined(${1:Resource}["${2:name}"]) {
+	${0}
+}
+endsnippet
+
+snippet el "Else" b
+else {
+	${0}
+}
+endsnippet
