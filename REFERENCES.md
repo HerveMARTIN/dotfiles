@@ -21,6 +21,7 @@
 - https://statico.github.io/vim3.html
 - https://www.youtube.com/watch?v=b6muaaqO-ns
 - https://pqrs.org/osx/karabiner/
+- https://noahfrederick.com/log/vim-templates-with-ultisnips-and-projectionist
 
 # GIT
 - https://github.com/ArnaudRinquin/blog/blob/master/2014-03-11-one-command-github-account-switch.md
