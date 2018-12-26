@@ -27,6 +27,8 @@
 | `w`/`W` | go to the beginning of next "word"/"big word" (including '-') |
 | `b`/`B` | go to the beginning of last "word"/"big word" (including '-') |
 | `{`/`}` | go to next/previous paragraph |
+| `C-u/d` | move half page up/down |
+| `C-b/f` | move one page backward/foreward |
 | `' '` | go back to the line where the cursor was before the last go to |
 | `' .` | go to last changed where the cursor was before the last go to |
 | `f x` | find the next 'x' character |
@@ -42,11 +44,11 @@
 | `C-w w` or `C-w C-w` | switch between panes |
 | `C-l` | go to next buffer |
 | `C-h` | go to previous buffer |
-| `C-b` | git blame |
+| `, b` | git blame |
 | `, n` | toggle line numbers |
 | `, r` | toggle relative line numbers |
 | `, f` | fuzzy find files |
-| `, b` | fuzzy find buffers |
+| `, bs` | fuzzy search buffers |
 | `, e c` | edit vimrc | 
 | `, s c` | source vimrc | 
 | `, p i` | run PlugInstall |
