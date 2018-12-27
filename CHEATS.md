@@ -87,6 +87,11 @@
 | `C-a C-a` | switch from last 2 windows |
 | `C-a p` | previous window |
 | `C-a n` | next window |
+| `C-a l` | last used window |
+| `C-a (` | previous session |
+| `C-a )` | next session |
+| `C-a L` | last used session |
+| `C-a s` | choose a session from a list |
 | `C-a $` | rename current session |
 | `C-a %` | split vertically |
 | `C-a "` | split horizontally |
