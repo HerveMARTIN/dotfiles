@@ -92,9 +92,9 @@ bindsym $mod+q focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1:&#xf120;"
+set $workspace1 "1:"
 set $workspace2 "2: "
-set $workspace3 "3"
+set $workspace3 "3: &#xf120;"
 set $workspace4 "4"
 set $workspace5 "5"
 set $workspace6 "6"
@@ -126,6 +126,10 @@ bindsym $mod+Shift+egrave move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+ccedilla move container to workspace $workspace9
 bindsym $mod+Shift+agrave move container to workspace $workspace10
+
+assign [class="HipChat"] $workspace10
+assign [class="Google-chrome"] $workspace2
+assign [class="Gnome-terminal"] $workspace3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -166,4 +170,16 @@ bar {
         status_command i3blocks
 }
 
+# Key bindings
+bindsym $mod+shift+x exec i3lock
+
+# Organize screen
+exec_always xrandr --output HDMI-2 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 960x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 1920x0 --rotate normal
+
+# Wallpaper
 exec_always feh --bg-scale ~/workspace/dotfiles/wallpaper.jpg
+
+# HipChat
+exec hipchat4
+exec gnome-terminal
+exec google-chrome
