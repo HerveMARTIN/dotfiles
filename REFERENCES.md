@@ -32,3 +32,8 @@
 - screenrc
 - ssh/config
 - gitconfig
+
+# I3
+https://www.youtube.com/watch?v=ARKIwOlazKI
+Arc theme
+
