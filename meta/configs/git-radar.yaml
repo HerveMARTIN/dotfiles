@@ -1,2 +1,0 @@
-- shell:
-    - "bash -c '[[ -d ~/.git-radar ]] || git clone https://github.com/michaeldfallen/git-radar ~/.git-radar'"

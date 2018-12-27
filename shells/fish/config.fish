@@ -1,6 +1,7 @@
 if test -d /usr/local/opt/ruby/bin
   set -g -x PATH /usr/local/opt/ruby/bin /usr/local/bin $PATH
 end
+
 set -g -x fish_greeting ''
 
 set -g theme_nerd_fonts yes
