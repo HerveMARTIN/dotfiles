@@ -35,12 +35,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+A kill
 
-# start dmenu (a program launcher)
+# start rofi (application launcher) 
 bindsym $mod+d exec rofi -show drun
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -171,10 +167,14 @@ bar {
 }
 
 # Key bindings
+set $allscreens "xrandr --output HDMI-2 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 960x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 1920x0 --rotate normal"
+set $singlescreen "xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off"
 bindsym $mod+shift+x exec i3lock
+bindsym $mod+shift+a exec $allscreens
+bindsym $mod+shift+s exec $singlescreen
 
-# Organize screen
-exec_always xrandr --output HDMI-2 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 960x1080 --rotate normal --output DP-2 --mode 1920x1080 --pos 1920x0 --rotate normal
+# By default init all 3 screens
+exec $allscreens
 
 # Wallpaper
 exec_always feh --bg-scale ~/workspace/dotfiles/wallpaper.jpg
