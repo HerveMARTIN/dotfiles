@@ -25,3 +25,8 @@ end
 if [ -f ~/.config/fish/completions/pass.fish ]
   source ~/.config/fish/completions/pass.fish
 end
+
+# sudo bangbang
+function sudobangbang --on-event fish_postexec
+    abbr !! sudo $argv[1]
+end
