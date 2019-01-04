@@ -4,6 +4,9 @@ end
 
 set -g -x fish_greeting ''
 
+# enable vi mode
+set -g fish_key_bindings fish_vi_key_bindings
+
 set -g theme_nerd_fonts yes
 set -g FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -g FZF_FIND_FILE_COMMAND "rg --files --hidden --follow --glob '!.git/*'"
