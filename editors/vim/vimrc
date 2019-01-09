@@ -33,6 +33,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mileszs/ack.vim'
 Plug 'dag/vim-fish'
 Plug 'ryanoasis/vim-devicons'
+Plug 'sjl/splice.vim'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'fatih/vim-go'
@@ -41,7 +42,7 @@ call plug#end()
 
 " For any plugins that use this, make their keymappings use comma
 let mapleader = ","
-let maplocalleader = ","
+let maplocalleader = ";"
 
 colorscheme neodark
 
