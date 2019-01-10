@@ -34,3 +34,8 @@ abbr --add cdw 'cd ~/Documents/workspace'
 abbr --add ll 'ls -alGh'
 abbr --add fr 'source ~/.config/fish/config.fish'
 abbr --add sc 'source ~/.config/fish/config.fish'
+
+# Surfraw
+abbr --add ddgo 'sr duckduckgo'
+abbr --add ggl 'sr google'
+abbr --add yt 'sr youtube'

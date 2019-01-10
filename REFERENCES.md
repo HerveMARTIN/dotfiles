@@ -29,9 +29,7 @@
 # TODO
 - tmux
 - tmuxinator
-- screenrc
 - ssh/config
-- gitconfig
 
 # I3
 https://www.youtube.com/watch?v=ARKIwOlazKI
@@ -39,3 +37,9 @@ Arc theme
 
 # Ranger File Manager
 https://ranger.github.io/cheatsheet.png
+
+# Other tools
+vifm
+bropages
+cheat
+surfraw
