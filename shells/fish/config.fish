@@ -1,5 +1,13 @@
 if test -d /usr/local/opt/ruby/bin
-  set -g -x PATH /usr/local/opt/ruby/bin /usr/local/bin $PATH
+  set -g -x PATH /usr/local/opt/ruby/bin $PATH
+end
+
+if test -d /usr/local/bin
+  set -g -x PATH /usr/local/bin $PATH
+end
+
+if test -d $HOME/.local/bin
+  set -g -x PATH $HOME/.local/bin $PATH
 end
 
 set -g -x fish_greeting ''
