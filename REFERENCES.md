@@ -38,7 +38,7 @@ Arc theme
 
 # Terminal File Manager
 ranger : https://ranger.github.io/cheatsheet.png
-vifm : ...
+vifm : https://vifm.info/
 
 # RSS Feed reader
 newsboat : https://newsboat.org/ https://github.com/newsboat/newsboat

@@ -1,3 +1,5 @@
+datetime-format "%d-%m-%Y"
+auto-reload yes
 refresh-on-startup  yes
 browser             google-chrome
 reload-threads      10
