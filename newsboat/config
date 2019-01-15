@@ -1,0 +1,12 @@
+refresh-on-startup  yes
+browser             google-chrome
+reload-threads      10
+
+# Colors.
+color listnormal        white black
+color listnormal_unread white black bold
+color listfocus         white color239
+color listfocus_unread  white color239 bold
+color info              color160 black bold
+color background        white black
+color article           white black

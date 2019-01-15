@@ -1,0 +1,3 @@
+- link:
+    ~/.newsboat/urls: newsboat/urls
+    ~/.newsboat/config: newsboat/config

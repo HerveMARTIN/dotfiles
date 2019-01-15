@@ -16,6 +16,7 @@
 # TMUX Cheat sheet
 - https://tmuxcheatsheet.com/
 - https://scripter.co/command-to-every-pane-window-session-in-tmux/
+tmux list-sessions -F "#{session_name}" | fzf | read -l result; and tmux switch-client -t "$result"
 
 # VIM
 - https://statico.github.io/vim3.html
@@ -38,6 +39,9 @@ Arc theme
 # Terminal File Manager
 ranger : https://ranger.github.io/cheatsheet.png
 vifm : ...
+
+# RSS Feed reader
+newsboat : https://newsboat.org/ https://github.com/newsboat/newsboat
 
 # Other tools
 bropages
