@@ -109,6 +109,7 @@ nnoremap <silent> <leader>bd :bd<CR>
 nnoremap <silent> <leader>es :UltiSnipsEdit<CR>
 nnoremap <silent> <leader>et :UltiSnipsEdit<CR>
 autocmd BufNewFile * call snippet#InsertSkeleton()
+let g:UltiSnipsEditSplit="vertical"
 
 " Quick pane resize
 map <silent> <A-Left> <C-w><
