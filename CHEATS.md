@@ -63,6 +63,8 @@
 | `$` | select to the end of line |
 | `i "` | select everything between the double quote |
 | `o` | go to the opposite corner of the block selection |
+| `cs"'` | replace surrounding " with ' |
+| `ds"` | delete surrounding " |
 
 ## NERDTree
 | Key Binding | Description |
