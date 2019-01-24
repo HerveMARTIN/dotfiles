@@ -1,0 +1,4 @@
+- link:
+    ~/.newsboat/urls: newsboat/urls
+    ~/.newsboat/config: newsboat/config
+    ~/.newsboat/browser: newsboat/browser-linux
