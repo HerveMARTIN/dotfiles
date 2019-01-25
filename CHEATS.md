@@ -95,6 +95,7 @@
 | `C-a s` | choose a session from a list |
 | `C-a f` | choose a session from fzf |
 | `C-a $` | rename current session |
+| `C-a ,` | rename current window |
 | `C-a %` `C-a v` | split vertically |
 | `C-a "` `C-a h` | split horizontally |
 | `C-a arrows` | move to pane according to arrow direction |
