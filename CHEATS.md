@@ -92,7 +92,8 @@
 | `C-a )` | next session |
 | `C-a L` | last used session |
 | `C-a s` | choose a session from a list |
+| `C-a f` | choose a session from fzf |
 | `C-a $` | rename current session |
-| `C-a %` | split vertically |
-| `C-a "` | split horizontally |
+| `C-a %` `C-a v` | split vertically |
+| `C-a "` `C-a h` | split horizontally |
 | `C-a arrows` | move to pane according to arrow direction |
