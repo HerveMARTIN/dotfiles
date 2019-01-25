@@ -84,6 +84,7 @@
 # Tmux
 | Key Binding | Description |
 | --- | --- |
+| `C-a d` | Detach from tmux session |
 | `C-a C-a` | switch from last 2 windows |
 | `C-a p` | previous window |
 | `C-a n` | next window |
