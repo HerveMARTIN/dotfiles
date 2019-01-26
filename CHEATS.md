@@ -86,6 +86,7 @@
 # Tmux
 | Key Binding | Description |
 | --- | --- |
+| `C-a d` | Detach from tmux session |
 | `C-a C-a` | switch from last 2 windows |
 | `C-a p` | previous window |
 | `C-a n` | next window |
@@ -94,7 +95,9 @@
 | `C-a )` | next session |
 | `C-a L` | last used session |
 | `C-a s` | choose a session from a list |
+| `C-a f` | choose a session from fzf |
 | `C-a $` | rename current session |
-| `C-a %` | split vertically |
-| `C-a "` | split horizontally |
+| `C-a ,` | rename current window |
+| `C-a %` `C-a v` | split vertically |
+| `C-a "` `C-a h` | split horizontally |
 | `C-a arrows` | move to pane according to arrow direction |
