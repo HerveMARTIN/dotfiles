@@ -1,0 +1,6 @@
+fontawesome.sty
+google-chrome
+namcap
+nerd-fonts-complete
+slack-desktop
+tmuxinator

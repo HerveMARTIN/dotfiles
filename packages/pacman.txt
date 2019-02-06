@@ -1,0 +1,9 @@
+fish
+dnsutils
+libidn2
+neovim
+newsboat
+python-pip
+rofi
+termite
+tmux
