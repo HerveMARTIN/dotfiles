@@ -3,6 +3,7 @@ dnsutils
 libidn2
 neovim
 newsboat
+pass
 python-pip
 rofi
 termite
