@@ -1,6 +1,5 @@
 # Submodules
 - git submodule add https://github.com/anishathalye/dotbot.git meta-dotbot
-- git submodule add https://github.com/VundleVim/Vundle.vim editors/vim/bundle/Vundle.vim
 
 # DOTBOT
 - https://github.com/magicmonty/dotfiles_dotbot/
@@ -23,6 +22,14 @@ tmux list-sessions -F "#{session_name}" | fzf | read -l result; and tmux switch-
 - https://www.youtube.com/watch?v=b6muaaqO-ns
 - https://pqrs.org/osx/karabiner/
 - https://noahfrederick.com/log/vim-templates-with-ultisnips-and-projectionist
+
+# Chrome extensions
+- DuckDuckGo : https://chrome.google.com/webstore/detail/duckduckgo-privacy-essent/bkdgflcldnnnapblkhphbgpggdiikppg
+- Vimium (navigate with vim key bindings): https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb/related
+- Proxy switcher : https://chrome.google.com/webstore/detail/proxy-switcher-and-manage/onnfghpihccifgojkpnnncpagjcdbjod
+- Edit this Cookie : https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg
+- Awesome screenshot : https://chrome.google.com/webstore/detail/awesome-screenshot-screen/nlipoenfbbikpbjkfpfillcgkoblgpmj
+- JSONView : https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc
 
 # GIT
 - https://github.com/ArnaudRinquin/blog/blob/master/2014-03-11-one-command-github-account-switch.md
