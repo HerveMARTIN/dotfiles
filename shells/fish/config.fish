@@ -21,7 +21,7 @@ set -g FZF_FIND_FILE_COMMAND "rg --files --hidden --follow --glob '!.git/*'"
 set -g -x EDITOR "vim"
 set -g -x BROWSER "google-chrome-stable"
 if test "$TERM" = "xterm-termite"
-  set -g -x TERM "xterm"
+  set -g -x TERM "xterm-256color"
 end
 
 for repo in (/bin/ls -1 ~/Documents/workspace)
