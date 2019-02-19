@@ -1,5 +1,6 @@
 fish
 dnsutils
+feh
 libidn2
 neovim
 newsboat
