@@ -5,6 +5,7 @@ neovim
 newsboat
 pass
 python-pip
+ripgrep
 rofi
 termite
 tmux
