@@ -19,6 +19,10 @@ set -g theme_nerd_fonts yes
 set -g FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -g FZF_FIND_FILE_COMMAND "rg --files --hidden --follow --glob '!.git/*'"
 set -g -x EDITOR "vim"
+set -g -x BROWSER "google-chrome-stable"
+if test "$TERM" = "xterm-termite"
+  set -g -x TERM "xterm"
+end
 
 for repo in (/bin/ls -1 ~/Documents/workspace)
   alias $repo "tmuxinator dev $repo"
