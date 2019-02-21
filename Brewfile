@@ -12,7 +12,7 @@ brew "bash"
 brew "bash-git-prompt"
 brew "coreutils"
 brew "fish"
-brew "gnu-sed", args: ["with-default-names"]
+brew "gnu-sed"
 brew "libksba"
 brew "gnupg"
 brew "htop"
