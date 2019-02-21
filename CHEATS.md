@@ -87,6 +87,7 @@
 | Key Binding | Description |
 | --- | --- |
 | `C-a d` | Detach from tmux session |
+| `C-a D` | Show all clients of current session, select+enter will detach |
 | `C-a C-a` | switch from last 2 windows |
 | `C-a p` | previous window |
 | `C-a n` | next window |
