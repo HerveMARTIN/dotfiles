@@ -44,5 +44,5 @@ function sudobangbang --on-event fish_postexec
 end
 
 if type -q neofetch
-  neofetch
+  #  neofetch
 end

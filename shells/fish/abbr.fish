@@ -21,7 +21,7 @@ abbr --add gs 'git status'
 abbr --add gst 'git stash'
 abbr --add gtl 'git tag | sort -r | head -n3'
 abbr --add gt 'git tag -a'
-abbr --add glme 'git log --author="herve.martin" --pretty=format:"%ai - %s" | less'
+abbr --add glme 'git log --author="herve.martin" --pretty=format:"%ai - %h - %s" | less'
 
 # tmuxinator
 abbr --add mux 'tmuxinator'
