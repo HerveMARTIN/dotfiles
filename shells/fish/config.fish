@@ -42,3 +42,7 @@ end
 function sudobangbang --on-event fish_postexec
     abbr !! sudo $argv[1]
 end
+
+if type -q neofetch
+  neofetch
+end
