@@ -1,6 +1,7 @@
 fontawesome.sty
 google-chrome
 namcap
+neofetch
 nerd-fonts-complete
 slack-desktop
 tmuxinator
