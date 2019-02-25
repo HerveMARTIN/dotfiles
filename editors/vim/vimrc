@@ -235,6 +235,15 @@ if has('nvim')
   let g:go_list_type = "quickfix"
 endif
 
+" python jedi
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>u"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>m"
+
 " GPG no undo,backup or swapfile
 if has("autocmd")
   if has("persistent_undo")
