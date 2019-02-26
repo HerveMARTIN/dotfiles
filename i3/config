@@ -300,7 +300,7 @@ exec --no-startup-id i3-msg "workspace $ws1; exec google-chrome-stable"
 exec --no-startup-id i3-msg "workspace $ws2; exec slack"
 exec --no-startup-id i3-msg "workspace $ws3; exec termite"
 exec --no-startup-id i3-msg "workspace $ws4; exec termite"
-exec --no-startup-id feh --bg-center ~/Documents/workspace/dotfiles/wallpapers/normal1.jpg
+exec --no-startup-id feh --bg-center ~/Documents/workspace/dotfiles/wallpapers/normal3.jpg
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
