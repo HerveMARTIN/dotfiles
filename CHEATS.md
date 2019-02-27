@@ -54,6 +54,12 @@
 | `, p i` | run PlugInstall |
 | `, c Space` | toggle comment |
 | `Space` | toggle NERDTree |
+| `"kyy` | copy current line to register k |
+| `"Kyy` | append current line to register k |
+| `"kp` | paste register k |
+| `"+y` | yank to system clipboard (Linux) |
+| `"+p` | paste from system clipboard (Linux) |
+| `:reg` | list all defined registers |
 | `v` | go to visual mode |
 | `V` | go to visual line mode |
 | `C-v` | go to visual block mode |

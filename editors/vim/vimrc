@@ -78,10 +78,6 @@ endif
 set ignorecase
 set smartcase
 
-" Map yy to ESC in insert/visual mode
-inoremap yy <Esc>
-vnoremap yy <Esc>
-
 " Shortcut to edit THIS configuration file: (e)dit (c)onfiguration
 nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
 
