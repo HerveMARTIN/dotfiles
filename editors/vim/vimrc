@@ -56,6 +56,13 @@ set autowriteall
 set wildmenu wildmode=full
 set backspace=2
 
+" Display unprintable characters f12 - switches
+set list
+" Unprintable chars mapping
+set listchars=tab:•\ ,trail:•,extends:»,precedes:«
+" Shortcut to toggle unprintable characters
+nnoremap <silent> <leader>si :set invlist<CR>
+
 " Omni completion
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
