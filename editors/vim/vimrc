@@ -8,6 +8,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+" For plugins details go to https://vimawesome.com/
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
@@ -28,6 +29,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-endwise'
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -125,6 +128,10 @@ map <silent> <A-Up> <C-W>+
 nmap <Leader>t :Tags<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>bs :Buffers<CR>
+
+" easymove
+map  / <Plug>(easymotion-sn)
+nmap s <Plug>(easymotion-s2)
 
 set background=dark
 
