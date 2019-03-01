@@ -9,35 +9,39 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " For plugins details go to https://vimawesome.com/
+" Appearance
 Plug 'KeitaNakamura/neodark.vim'
-Plug 'w0rp/ale'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'Xuyuanp/nerdtree-git-plugin' , { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'ryanoasis/vim-devicons'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
+" Helpers
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'tpope/vim-fugitive'
-Plug 'rodjek/vim-puppet'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'jamessan/vim-gnupg'
-Plug 'zivyangll/git-blame.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-endwise'
 Plug 'easymotion/vim-easymotion'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'mileszs/ack.vim'
-Plug 'dag/vim-fish'
-Plug 'ryanoasis/vim-devicons'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" Git tools
+Plug 'Xuyuanp/nerdtree-git-plugin' , { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'tpope/vim-fugitive'
+Plug 'zivyangll/git-blame.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'sjl/splice.vim'
+" Language specific
+Plug 'w0rp/ale'
+Plug 'rodjek/vim-puppet'
+Plug 'jamessan/vim-gnupg'
+Plug 'dag/vim-fish'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'fatih/vim-go'
