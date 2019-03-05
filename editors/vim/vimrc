@@ -10,11 +10,12 @@ endif
 call plug#begin('~/.vim/plugged')
 " For plugins details go to https://vimawesome.com/
 " Appearance
-Plug 'KeitaNakamura/neodark.vim'
+"Plug 'KeitaNakamura/neodark.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
-Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/tmuxline.vim'
 " Helpers
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -36,6 +37,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'sjl/splice.vim'
 " Language specific
+"Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'rodjek/vim-puppet'
 Plug 'jamessan/vim-gnupg'
@@ -52,9 +54,8 @@ call plug#end()
 let mapleader = ","
 let maplocalleader = ";"
 
-colorscheme neodark
-let g:neodark#background = '#202020'
-let g:neodark#use_256color = 1
+colorscheme onedark
+"colorscheme neodark
 
 set tabstop=2 shiftwidth=2 expandtab
 " Make it easier to work with buffers
@@ -220,6 +221,10 @@ let g:deoplete#enable_at_startup = 1
 " ALE
 let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
+let g:ale_echo_msg_warning_str = '▲'
+let g:ale_echo_msg_error_str = '✗'
+let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
+
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -232,6 +237,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
+let g:airline_theme='onedark'
 
 " git blame
 nnoremap <Leader>gb :call gitblame#echo()<CR>

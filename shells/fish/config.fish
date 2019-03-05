@@ -10,6 +10,8 @@ if test -d /usr/local/opt/ruby/bin
   set -g -x PATH /usr/local/opt/ruby/bin $PATH
 end
 
+set -g -x PATH $PATH (ruby -e 'print Gem.user_dir')/bin
+
 set -g -x fish_greeting ''
 
 # enable vi mode

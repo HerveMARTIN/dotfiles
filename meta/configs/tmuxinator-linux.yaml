@@ -1,5 +1,5 @@
 - link:
-    ~/.tmuxinator: tmux/tmuxinator
+    ~/.tmuxinator: tmuxinator
 - shell:
   - 'mkdir -p ~/.local/bin'
   - "bash -c 'export GEM_HOME=~/.gem/ruby/2.3.0/ && gem install --user-install --bindir=~/.local/bin tmuxinator'"
