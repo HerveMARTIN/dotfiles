@@ -1,3 +1,9 @@
 [submodule "meta/dotbot"]
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "tmux/plugins/tmux-onedark-theme"]
+	path = tmux/plugins/tmux-onedark-theme
+	url = https://github.com/odedlaz/tmux-onedark-theme
