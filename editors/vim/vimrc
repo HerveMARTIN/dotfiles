@@ -22,10 +22,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -38,8 +38,8 @@ Plug 'sjl/splice.vim'
 " Language specific
 Plug 'w0rp/ale'
 Plug 'rodjek/vim-puppet'
-Plug 'jamessan/vim-gnupg'
-Plug 'dag/vim-fish'
+Plug 'jamessan/vim-gnupg', { 'for': 'gpg' }
+Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 if has('nvim')
