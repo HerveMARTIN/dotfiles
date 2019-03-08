@@ -44,6 +44,7 @@ Plug 'jamessan/vim-gnupg', { 'for': 'gpg' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'mustache/vim-mustache-handlebars'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'fatih/vim-go'
