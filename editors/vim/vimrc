@@ -15,6 +15,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
+Plug 'etdev/vim-hexcolor'
 "Plug 'edkolev/tmuxline.vim'
 " Helpers
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
