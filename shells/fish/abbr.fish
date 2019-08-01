@@ -19,7 +19,7 @@ abbr --add gpl 'git pull'
 abbr --add gr 'git remote'
 abbr --add gs 'git status'
 abbr --add gst 'git stash'
-abbr --add gtl 'git tag | sort -r | head -n3'
+abbr --add gtl 'git tag | sort -r --version-sort | head -n3'
 abbr --add gt 'git tag -a'
 abbr --add glme 'git log --author="herve.martin" --pretty=format:"%ai - %h - %s" | less'
 
