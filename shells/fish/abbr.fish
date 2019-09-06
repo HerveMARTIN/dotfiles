@@ -16,6 +16,7 @@ abbr --add gl 'git log --date=short --pretty=format:"%C(yellow)%h%Creset | %C(ma
 abbr --add gm 'git merge'
 abbr --add gp 'git push'
 abbr --add gpl 'git pull'
+abbr --add gpt 'git push --tags'
 abbr --add gr 'git remote'
 abbr --add gs 'git status'
 abbr --add gst 'git stash'
