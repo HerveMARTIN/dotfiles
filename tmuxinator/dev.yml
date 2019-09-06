@@ -3,4 +3,4 @@ root: ~/Documents/workspace/<%= @args[0] %>
 
 windows:
   - editor: nvim
-  - shell:
+  - shell: git pull
