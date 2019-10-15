@@ -109,17 +109,33 @@ nnoremap <silent> <leader>pi :PlugInstall<CR>
 nnoremap <silent> <leader>pc :PlugClean<CR>
 
 " Toggle line numbers
+set number
+set relativenumber
 nnoremap <silent> <leader>n :setlocal number!<CR>
 nnoremap <silent> <leader>r :setlocal relativenumber!<CR>
 
-" Edit Puppetfile
+" Edit Puppetfile/Jenkinsfile
 nnoremap <silent> <leader>ep :e Puppetfile<CR>
+nnoremap <silent> <leader>ej :e Jenkinsfile<CR>
 
 " Buffer management
 nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
 nnoremap <C-m> :b#<CR>
 nnoremap <silent> <leader>bd :bd<CR>
+
+" Align blocks of text and keep them selected
+vmap < <gv
+vmap > >gv
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+vnoremap <c-/> :TComment<cr>
+
+" Speed moves
+noremap H ^
+noremap L g_
+noremap J 5j
+noremap K 5k
 
 " Edit Snippet/Template
 nnoremap <silent> <leader>es :UltiSnipsEdit<CR>
@@ -137,6 +153,9 @@ map <silent> <A-Up> <C-W>+
 nmap <Leader>t :Tags<CR>
 nmap <Leader>f :Files<CR>
 nmap <Leader>bs :Buffers<CR>
+
+" AutoFormatting
+noremap <leader>af :Autoformat<CR>
 
 " easymove
 map  / <Plug>(easymotion-sn)
