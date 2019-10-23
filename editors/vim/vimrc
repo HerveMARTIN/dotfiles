@@ -102,7 +102,7 @@ set smartcase
 nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
 
 " Shortcut to source (reload) THIS configuration file after editing it: (s)ource (c)onfiguraiton
-nnoremap <silent> <leader>sc :source $MYVIMRC<CR>
+nnoremap <leader>sc :source $MYVIMRC<CR>
 
 " Shortcuts to launch PlugInstall and PlugClean
 nnoremap <silent> <leader>pi :PlugInstall<CR>
@@ -114,6 +114,7 @@ nnoremap <silent> <leader>r :setlocal relativenumber!<CR>
 
 " Edit Puppetfile
 nnoremap <silent> <leader>ep :e Puppetfile<CR>
+nnoremap <silent> <leader>ej :e Jenkinsfile<CR>
 
 " Buffer management
 nnoremap <C-l> :bn<CR>
@@ -141,6 +142,19 @@ nmap <Leader>bs :Buffers<CR>
 " easymove
 map  / <Plug>(easymotion-sn)
 nmap s <Plug>(easymotion-s2)
+
+" speedmove
+noremap H ^
+noremap L g_
+noremap J 10j
+noremap K 10k
+
+" Align blocks and keep them selected
+vmap < <gv
+vmap > >gv
+
+" Delete without copying to register
+map <Leader>d "_dd
 
 set background=dark
 
