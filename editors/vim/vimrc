@@ -59,7 +59,10 @@ let maplocalleader = ";"
 colorscheme onedark
 "colorscheme neodark
 
-set tabstop=2 shiftwidth=2 expandtab
+set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+au BufNewFile,BufRead Jenkinsfile set filetype=groovy
+autocmd Filetype groovy setlocal ts=4 sw=4 sts=4 expandtab
+
 " Make it easier to work with buffers
 " http://vim.wikia.com/wiki/Easier_buffer_switching
 set hidden
