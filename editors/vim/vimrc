@@ -130,8 +130,12 @@ nnoremap <silent> <leader>bd :bd<CR>
 " Align blocks of text and keep them selected
 vmap < <gv
 vmap > >gv
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
+nnoremap <leader>d "_dd
+vnoremap <leader>d "_D
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
 vnoremap <c-/> :TComment<cr>
 
 " Speed moves
@@ -139,6 +143,9 @@ noremap H ^
 noremap L g_
 noremap J 10j
 noremap K 10k
+
+" Quick escape
+inoremap jk <ESC>
 
 " Edit Snippet/Template
 nnoremap <silent> <leader>es :UltiSnipsEdit<CR>
