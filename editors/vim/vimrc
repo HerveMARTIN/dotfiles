@@ -171,6 +171,22 @@ noremap <leader>af :Autoformat<CR>
 map  / <Plug>(easymotion-sn)
 nmap s <Plug>(easymotion-s2)
 
+" speedmove
+noremap H ^
+noremap L g_
+noremap J 10j
+noremap K 10k
+
+" Align blocks and keep them selected
+vmap < <gv
+vmap > >gv
+
+" Delete without copying to register
+map <Leader>d "_dd
+vmap <Leader>d "_dd
+map <Leader>y "+yy
+vmap <Leader>y "+Y
+
 set background=dark
 
 " Vim Indent
