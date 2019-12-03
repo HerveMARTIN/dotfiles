@@ -120,6 +120,9 @@ nnoremap <silent> <leader>r :setlocal relativenumber!<CR>
 " Edit Puppetfile/Jenkinsfile
 nnoremap <silent> <leader>ep :e Puppetfile<CR>
 nnoremap <silent> <leader>ej :e Jenkinsfile<CR>
+nnoremap <silent> <leader>er :e Rakefile<CR>
+nnoremap <silent> <leader>ed :e Dockerfile<CR>
+nnoremap <silent> <leader>eg :e Gemfile<CR>
 
 " Buffer management
 nnoremap <C-l> :bn<CR>
