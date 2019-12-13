@@ -149,6 +149,7 @@ noremap K 10k
 
 " Quick escape
 inoremap jk <ESC>
+inoremap jj <ESC>
 
 " Edit Snippet/Template
 nnoremap <silent> <leader>es :UltiSnipsEdit<CR>
