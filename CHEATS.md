@@ -44,6 +44,7 @@
 | `C-w w` or `C-w C-w` | switch between panes |
 | `C-l` | go to next buffer |
 | `C-h` | go to previous buffer |
+| `C-o` or `C-i` | go to previous/next cursor place |
 | `, b` | git blame |
 | `, n` | toggle line numbers |
 | `, r` | toggle relative line numbers |
