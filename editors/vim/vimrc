@@ -129,6 +129,7 @@ nnoremap <C-l> :bn<CR>
 nnoremap <C-h> :bp<CR>
 nnoremap <C-m> :b#<CR>
 nnoremap <silent> <leader>bd :bd<CR>
+nnoremap <silent> <leader>bc :%bd<CR><C-O>:bd#<CR><CR>
 
 " Registers
 nnoremap <leader>g :register<CR>
