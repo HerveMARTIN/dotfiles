@@ -9,5 +9,6 @@ python-pip
 ripgrep
 rofi
 ruby
+speedcrunch
 termite
 tmux
