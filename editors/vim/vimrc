@@ -151,6 +151,10 @@ noremap L g_
 noremap J 10j
 noremap K 10k
 
+" Marp
+nnoremap <leader>mh :!marp % -o $(basename % .md).html<CR>
+nnoremap <leader>mp :!marp % -o $(basename % .md).pdf<CR>
+
 " Quick escape
 inoremap jk <ESC>
 inoremap jj <ESC>
