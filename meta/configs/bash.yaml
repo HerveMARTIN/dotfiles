@@ -1,2 +1,3 @@
 - link:
     ~/.bashrc: shells/bash/bashrc
+    ~/.local/share/bash-completion: shells/bash/bash-completion
