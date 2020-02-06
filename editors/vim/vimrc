@@ -101,6 +101,18 @@ endif
 set ignorecase
 set smartcase
 
+set clipboard=unnamed
+
+" Stop using arrow keys
+nnoremap <Left> :echo "Use h"<CR>
+nnoremap <Right> :echo "Use l"<CR>
+nnoremap <Up> :echo "Use k"<CR>
+nnoremap <Down> :echo "Use j"<CR>
+vnoremap <Left> :echo "Use h"<CR>
+vnoremap <Right> :echo "Use l"<CR>
+vnoremap <Up> :echo "Use k"<CR>
+vnoremap <Down> :echo "Use j"<CR>
+
 " Shortcut to edit THIS configuration file: (e)dit (c)onfiguration
 nnoremap <silent> <leader>ec :e $MYVIMRC<CR>
 
@@ -114,8 +126,8 @@ nnoremap <silent> <leader>pc :PlugClean<CR>
 " Toggle line numbers
 set number
 set relativenumber
-nnoremap <silent> <leader>n :setlocal number!<CR>
-nnoremap <silent> <leader>r :setlocal relativenumber!<CR>
+nnoremap <silent> <leader>nl :setlocal number!<CR>
+nnoremap <silent> <leader>nr :setlocal relativenumber!<CR>
 
 " Edit Puppetfile/Jenkinsfile
 nnoremap <silent> <leader>ep :e Puppetfile<CR>
@@ -132,7 +144,7 @@ nnoremap <silent> <leader>bd :bd<CR>
 nnoremap <silent> <leader>bc :%bd<CR><C-O>:bd#<CR><CR>
 
 " Registers
-nnoremap <leader>g :register<CR>
+nnoremap <,eader>r :register<CR>
 
 " Align blocks of text and keep them selected
 vmap < <gv
@@ -148,8 +160,8 @@ vnoremap <c-/> :TComment<cr>
 " Speed moves
 noremap H ^
 noremap L g_
-noremap J 10j
-noremap K 10k
+noremap J 10jzz
+noremap K 10kzz
 
 " Marp
 nnoremap <leader>mh :!marp % -o $(basename % .md).html<CR>
@@ -182,12 +194,6 @@ noremap <leader>af :Autoformat<CR>
 " easymove
 map  / <Plug>(easymotion-sn)
 nmap s <Plug>(easymotion-s2)
-
-" speedmove
-noremap H ^
-noremap L g_
-noremap J 10j
-noremap K 10k
 
 " Align blocks and keep them selected
 vmap < <gv

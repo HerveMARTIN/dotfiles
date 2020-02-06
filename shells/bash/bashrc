@@ -87,3 +87,5 @@ function sshagent_init {
 sshagent_init
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source /home/hmartin/.config/broot/launcher/bash/br
