@@ -54,9 +54,19 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; Enable evil mode
-(require 'evil)
-(evil-mode 1)
+; load evil
+(use-package evil
+  :ensure t ;; install the evil package if not installed
+  :init ;; tweak evil's configuration before loading it
+  (setq evil-search-module 'evil-search)
+  (setq evil-ex-complete-emacs-commands nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (setq evil-shift-round nil)
+  (setq evil-want-C-u-scroll t)
+  :config ;; tweak evil after loading it
+  (evil-mode); Enable evil mode
+ )
 (use-package evil-surround
   :ensure t
   :config
