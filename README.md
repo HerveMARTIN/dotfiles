@@ -12,7 +12,7 @@ Structure of this repository is strongly inspired by [vsund](https://github.com/
 * vim
 * bash
 * fish
-  * fisher
+  * omf
 
 ## Installation
 
