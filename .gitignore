@@ -4,3 +4,7 @@ editors/vim/backup/*
 editors/vim/swap/*
 editors/vim/undo/*
 editors/vim/init.vim
+editors/emacs/elpa/*
+editors/emacs/network-security.data
+editors/emacs/auto-save-list/*
+editors/emacs/*~
