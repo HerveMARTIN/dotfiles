@@ -28,8 +28,8 @@
 
 (set-language-environment "UTF-8")
 
-; (setq custom-file "~/emacs.d/.emacs-custom.el")
-; (load custom-file)
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
 ;; AFFICHAGE
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -41,18 +41,6 @@
 (setq ring-bell-function 'ignore)
 
 (display-time-mode t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (evil-surround evil diminish use-package))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ; load evil
 (use-package evil
