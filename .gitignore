@@ -4,7 +4,8 @@ editors/vim/backup/*
 editors/vim/swap/*
 editors/vim/undo/*
 editors/vim/init.vim
-editors/emacs/*
+editors/emacs/
+editors/emacs/custom.el
 !editors/emacs/configuration.org
 !editors/emacs/init.el
 !editors/emacs/resources

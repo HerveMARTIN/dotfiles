@@ -46,7 +46,7 @@ Always compile packages, and use the newest version available.
 (set-language-environment "UTF-8")
 #+end_src
 
-* Custom setting go elsewhere
+* Custom settings go elsewhere
 
 #+begin_src emacs-lisp
 (setq custom-file "~/.emacs.d/custom.el")
@@ -84,6 +84,27 @@ project:
   (setq frame-title-format '((:eval (projectile-project-name))))
 #+end_src
 
+** Highlight the current line
+
+=global-hl-line-mode= softly highlights the background color of the line
+containing point. It makes it a bit easier to find point, and it's useful when
+pairing or presenting code.
+
+#+begin_src emacs-lisp
+  (global-hl-line-mode)
+#+end_src
+
+** Highlight uncommitted changes
+
+Use the =diff-hl= package to highlight changed-and-uncommitted lines when
+programming.
+
+#+begin_src emacs-lisp
+  (use-package diff-hl
+    :config
+    (add-hook 'prog-mode-hook 'turn-on-diff-hl-mode)
+    (add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode))
+#+end_src
 
 * =evil-mode=
 
