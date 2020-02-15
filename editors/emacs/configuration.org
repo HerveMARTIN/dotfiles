@@ -34,23 +34,23 @@ Always compile packages, and use the newest version available.
 
 #+begin_src emacs-lisp
   (setq user-full-name "Hervé MARTIN"
-        user-mail-address "herve.martin@gmail.com"
-        calendar-latitude 47.567
-        calendar-longitude -1.615
-        calendar-location-name "Nozay, 44, France")
+    user-mail-address "herve.martin@gmail.com"
+    calendar-latitude 47.567
+    calendar-longitude -1.615
+    calendar-location-name "Nozay, 44, France")
 #+end_src
 
 * Lang
 
 #+begin_src emacs-lisp
-(set-language-environment "UTF-8")
+  (set-language-environment "UTF-8")
 #+end_src
 
 * Custom settings go elsewhere
 
 #+begin_src emacs-lisp
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file)
+  (setq custom-file "~/.emacs.d/custom.el")
+  (load custom-file)
 #+end_src
 
 * UI preferences
@@ -67,8 +67,8 @@ I don't usually use the menu or scroll bar, and they take up useful space.
 Show line numbers and date
 
 #+begin_src emacs-lisp
-(column-number-mode t)
-(display-time-mode t)
+  (column-number-mode t)
+  (display-time-mode t)
 #+end_src
 
 Disable ring bell
@@ -109,18 +109,18 @@ programming.
 * =evil-mode=
 
 #+begin_src emacs-lisp
-(use-package evil
-  :ensure t ;; install the evil package if not installed
-  :init ;; tweak evil's configuration before loading it
-  (setq evil-search-module 'evil-search)
-  (setq evil-ex-complete-emacs-commands nil)
-  (setq evil-vsplit-window-right t)
-  (setq evil-split-window-below t)
-  (setq evil-shift-round nil)
-  (setq evil-want-C-u-scroll t)
-  :config ;; tweak evil after loading it
-  (evil-mode); Enable evil mode
-)
+  (use-package evil
+    :ensure t ;; install the evil package if not installed
+    :init ;; tweak evil's configuration before loading it
+    (setq evil-search-module 'evil-search)
+    (setq evil-ex-complete-emacs-commands nil)
+    (setq evil-vsplit-window-right t)
+    (setq evil-split-window-below t)
+    (setq evil-shift-round nil)
+    (setq evil-want-C-u-scroll t)
+    :config ;; tweak evil after loading it
+    (evil-mode); Enable evil mode
+  )
 #+end_src
 
 Install =evil-collection=, which provides evil-friendly bindings for many modes.
@@ -133,19 +133,19 @@ Install =evil-collection=, which provides evil-friendly bindings for many modes.
 Enable =surround= everywhere.
 
 #+begin_src emacs-lisp
-(use-package evil-surround
-  :ensure t
-  :config
-  (global-evil-surround-mode 1))
+  (use-package evil-surround
+    :ensure t
+    :config
+    (global-evil-surround-mode 1))
 #+end_src
 
 Use =leader= for evil
 
 #+begin_src emacs-lisp
-(use-package evil-leader
-  :ensure t
-  :config
-  (global-evil-leader-mode 1))
+  (use-package evil-leader
+    :ensure t
+    :config
+    (global-evil-leader-mode 1))
 #+end_src
 
 Use =evil= with Org agendas.
