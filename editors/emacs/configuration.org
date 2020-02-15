@@ -106,6 +106,19 @@ programming.
     (add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode))
 #+end_src
 
+** Theme Monokai
+
+#+begin_src emacs-lisp
+  (use-package molokai-theme
+    :ensure t
+    :load-path "themes"
+    :init
+    (setq molokai-theme-kit t)
+    :config
+    (load-theme 'molokai t)
+  )
+#+end_src
+
 * =evil-mode=
 
 #+begin_src emacs-lisp
