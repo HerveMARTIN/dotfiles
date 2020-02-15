@@ -174,4 +174,89 @@ Use =evil= with Org agendas.
     (evil-org-agenda-set-keys))
 #+end_src
 
+* Project management
 
+I use a few packages in virtually every programming or writing environment to
+manage the project, handle auto-completion, search for terms, and deal with
+version control. That's all in here.
+
+** =ripgrep=
+
+Install and configure [[https://github.com/Wilfred/deadgrep][deadgrep]] as an interface to =ripgrep=. I prefer =evil=
+bindings.
+
+#+begin_src emacs-lisp
+  (use-package deadgrep
+    :config (evil-collection-deadgrep-setup))
+#+end_src
+
+** =company=
+
+Use =company-mode= everywhere.
+
+#+begin_src emacs-lisp
+  (use-package company)
+  (add-hook 'after-init-hook 'global-company-mode)
+#+end_src
+
+Use =M-/= for completion.
+
+#+begin_src emacs-lisp
+  (global-set-key (kbd "M-/") 'company-complete-common)
+#+end_src
+
+** =dumb-jump=
+
+The =dumb-jump= package works well enough in a [[https://github.com/jacktasia/dumb-jump#supported-languages][ton of environments]], and it
+doesn't require any additional setup. I've bound its most useful command to
+=M-.=.
+
+#+begin_src emacs-lisp
+  (use-package dumb-jump
+    :config
+    (define-key evil-normal-state-map (kbd "M-.") 'dumb-jump-go)
+    (setq dumb-jump-selector 'ivy))
+#+end_src
+
+** =flycheck=
+
+ #+begin_src emacs-lisp
+   (use-package let-alist)
+   (use-package flycheck)
+ #+end_src
+
+** =magit=
+
+I use =magit= to handle version control. It's lovely, but I tweak a few things:
+
+- I bring up the status menu with =C-x g=.
+- Use =evil= keybindings with =magit=.
+- The default behavior of =magit= is to ask before pushing. I haven't had any
+  problems with accidentally pushing, so I'd rather not confirm that every time.
+- Per [[http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html][tpope's suggestions]], highlight commit text in the summary line that goes
+  beyond 50 characters.
+- On the command line I'll generally push a new branch with a plain old =git
+  push=, which automatically creates a tracking branch on (usually) =origin=.
+  Magit, by default, wants me to manually specify an upstream branch. This binds
+  =P P= to =magit-push-implicitly=, which is just a wrapper around =git push
+  -v=. Convenient!
+- I'd like to start in the insert state when writing a commit message.
+
+#+begin_src emacs-lisp
+  (use-package magit
+    :bind
+    ("C-x g" . magit-status)
+
+    :config
+    (use-package evil-magit)
+    (use-package with-editor)
+    (setq magit-push-always-verify nil)
+    (setq git-commit-summary-max-length 50)
+
+    (with-eval-after-load 'magit-remote
+      (magit-define-popup-action 'magit-push-popup ?P
+        'magit-push-implicitly--desc
+        'magit-push-implicitly ?p t))
+
+    (add-hook 'with-editor-mode-hook 'evil-insert-state))
+#+end_src
