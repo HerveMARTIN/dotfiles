@@ -1,0 +1,143 @@
+#+TITLE: Emacs Configuration
+#+AUTHOR: Hervé MARTIN
+#+EMAIL: herve.martin@gmail.com
+#+OPTIONS: toc:nil num:nil
+
+* Configure =use-package=
+
+I use =use-package= to install and configure my packages. My =init.el= includes
+the initial setup for =package.el= and ensures that =use-package= is installed,
+since I wanna do that right away.
+
+This makes sure that =use-package= will install the package if it's not already
+available. It also means that I should be able to open Emacs for the first time
+on a fresh Debian box and have my whole environment automatically installed. I'm
+not /totally/ sure about that, but we're gettin' close.
+
+#+begin_src emacs-lisp
+  (require 'use-package-ensure)
+  (setq use-package-always-ensure t)
+#+end_src
+
+Always compile packages, and use the newest version available.
+
+#+begin_src emacs-lisp
+  (use-package auto-compile
+    :config (auto-compile-on-load-mode))
+
+  (setq load-prefer-newer t)
+#+end_src
+
+* Set personal information
+
+** Who am I? Where am I?
+
+#+begin_src emacs-lisp
+  (setq user-full-name "Hervé MARTIN"
+        user-mail-address "herve.martin@gmail.com"
+        calendar-latitude 47.567
+        calendar-longitude -1.615
+        calendar-location-name "Nozay, 44, France")
+#+end_src
+
+* Lang
+
+#+begin_src emacs-lisp
+(set-language-environment "UTF-8")
+#+end_src
+
+* Custom setting go elsewhere
+
+#+begin_src emacs-lisp
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+#+end_src
+
+* UI preferences
+** Tweak window chrome
+
+I don't usually use the menu or scroll bar, and they take up useful space.
+
+#+begin_src emacs-lisp
+  (tool-bar-mode 0)
+  (menu-bar-mode 0)
+  (scroll-bar-mode -1)
+#+end_src
+
+Show line numbers and date
+
+#+begin_src emacs-lisp
+(column-number-mode t)
+(display-time-mode t)
+#+end_src
+
+Disable ring bell
+
+#+begin_src emacs-lisp
+  (setq ring-bell-function 'ignore)
+#+end_src
+
+The default frame title isn't useful. This binds it to the name of the current
+project:
+
+#+begin_src emacs-lisp
+  (setq frame-title-format '((:eval (projectile-project-name))))
+#+end_src
+
+
+* =evil-mode=
+
+#+begin_src emacs-lisp
+(use-package evil
+  :ensure t ;; install the evil package if not installed
+  :init ;; tweak evil's configuration before loading it
+  (setq evil-search-module 'evil-search)
+  (setq evil-ex-complete-emacs-commands nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (setq evil-shift-round nil)
+  (setq evil-want-C-u-scroll t)
+  :config ;; tweak evil after loading it
+  (evil-mode); Enable evil mode
+)
+#+end_src
+
+Install =evil-collection=, which provides evil-friendly bindings for many modes.
+
+#+begin_src emacs-lisp
+  (use-package evil-collection
+    :after evil)
+#+end_src
+
+Enable =surround= everywhere.
+
+#+begin_src emacs-lisp
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1))
+#+end_src
+
+Use =leader= for evil
+
+#+begin_src emacs-lisp
+(use-package evil-leader
+  :ensure t
+  :config
+  (global-evil-leader-mode 1))
+#+end_src
+
+Use =evil= with Org agendas.
+
+#+begin_src emacs-lisp
+  (use-package evil-org
+    :after org
+    :config
+    (add-hook 'org-mode-hook 'evil-org-mode)
+    (add-hook 'evil-org-mode-hook
+              (lambda () (evil-org-set-key-theme)))
+    (require 'evil-org-agenda)
+    (evil-org-agenda-set-keys))
+#+end_src
+
+

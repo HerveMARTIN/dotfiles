@@ -147,7 +147,7 @@ nnoremap <silent> <leader>bd :bd<CR>
 nnoremap <silent> <leader>bc :%bd<CR><C-O>:bd#<CR><CR>
 
 " Registers
-nnoremap <,eader>r :register<CR>
+nnoremap <leader>r :register<CR>
 
 " Align blocks of text and keep them selected
 vmap < <gv
