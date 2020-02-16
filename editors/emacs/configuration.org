@@ -260,3 +260,103 @@ I use =magit= to handle version control. It's lovely, but I tweak a few things:
 
     (add-hook 'with-editor-mode-hook 'evil-insert-state))
 #+end_src
+
+=git-timemachine=, which lets you quickly page through the
+history of a file.
+
+#+begin_src emacs-lisp
+  (use-package git-timemachine)
+#+end_src
+
+** =projectile=
+
+Projectile's default binding of =projectile-ag= to =C-c p s s= is clunky enough
+that I rarely use it (and forget it when I need it). This binds it to the
+easier-to-type =C-c v= to useful searches.
+
+Bind =C-p= to fuzzy-finding files in the current project. We also need to
+explicitly set that in a few other modes.
+
+I use =ivy= as my completion system.
+
+When I visit a project with =projectile-switch-project=, the default action is
+to search for a file in that project. I'd rather just open up the top-level
+directory of the project in =dired= and find (or create) new files from there.
+
+I'd like to /always/ be able to recursively fuzzy-search for files, not just
+when I'm in a Projectile-defined project. I use the current directory as a
+project root (if I'm not in a "real" project).
+
+#+begin_src emacs-lisp
+  (use-package projectile
+    :bind
+    ("C-c v" . deadgrep)
+
+    :config
+    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+    (define-key evil-normal-state-map (kbd "C-p") 'projectile-find-file)
+    (evil-define-key 'motion ag-mode-map (kbd "C-p") 'projectile-find-file)
+    (evil-define-key 'motion rspec-mode-map (kbd "C-p") 'projectile-find-file)
+
+    (setq projectile-completion-system 'ivy)
+    (setq projectile-switch-project-action 'projectile-dired)
+    (setq projectile-require-project-root nil)
+    (setq projectile-project-search-path '("~/Documents/workspace"))
+  )
+#+end_src
+
+** Configure =ivy= and =counsel=
+
+I use =ivy= and =counsel= as my completion framework.
+
+This configuration:
+
+- Uses =counsel-M-x= for command completion,
+- Replaces =isearch= with =swiper=,
+- Uses =smex= to maintain history,
+- Enables fuzzy matching everywhere except swiper (where it's thoroughly
+  unhelpful), and
+- Includes recent files in the switch buffer.
+
+#+begin_src emacs-lisp
+  (use-package counsel
+    :bind
+    ("M-x" . 'counsel-M-x)
+    ("C-s" . 'swiper)
+
+    :config
+    (use-package flx)
+    (use-package smex)
+
+    (ivy-mode 1)
+    (setq ivy-use-virtual-buffers t)
+    (setq ivy-count-format "(%d/%d) ")
+    (setq ivy-initial-inputs-alist nil)
+    (setq ivy-re-builders-alist
+			'((swiper . ivy--regex-plus)
+				(t . ivy--regex-fuzzy))))
+#+end_src
+
+** Use Helm Projectile
+
+Install Helm first
+
+#+begin_src emacs-lisp
+(use-package helm
+	:ensure t
+	:config
+	(helm-mode 1)
+	(setq helm-autoresize-mode t)
+	(global-set-key (kbd "C-x C-f") 'helm-find-files)
+)
+#+end_src
+
+#+begin_src emacs-lisp
+	(use-package helm-projectile
+		:bind (("C-S-P" . helm-projectile-switch-project))
+		:bind (("C-x f" . helm-projectile-find-file))
+		:ensure t
+	)
+#+end_src
+
