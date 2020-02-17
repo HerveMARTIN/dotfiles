@@ -303,6 +303,7 @@ project root (if I'm not in a "real" project).
     (setq projectile-switch-project-action 'projectile-dired)
     (setq projectile-require-project-root nil)
     (setq projectile-project-search-path '("~/Documents/workspace"))
+    (projectile-discover-projects-in-search-path)
   )
 #+end_src
 
