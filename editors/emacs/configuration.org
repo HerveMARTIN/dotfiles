@@ -121,6 +121,21 @@ programming.
 
 * =evil-mode=
 
+** Use =leader= for evil
+Before loading evil
+
+#+begin_src emacs-lisp
+  (use-package evil-leader
+    :ensure t
+    :config
+    (global-evil-leader-mode 1)
+	)
+	(evil-leader/set-leader ",")
+#+end_src
+
+See leader bindings paragraph
+
+** Evil core
 #+begin_src emacs-lisp
   (use-package evil
     :ensure t ;; install the evil package if not installed
@@ -152,14 +167,6 @@ Enable =surround= everywhere.
     (global-evil-surround-mode 1))
 #+end_src
 
-Use =leader= for evil
-
-#+begin_src emacs-lisp
-  (use-package evil-leader
-    :ensure t
-    :config
-    (global-evil-leader-mode 1))
-#+end_src
 
 Use =evil= with Org agendas.
 
@@ -361,3 +368,7 @@ Install Helm first
 	)
 #+end_src
 
+* Evil Leader key bindings
+(evil-leader/set-key "f" 'helm-projectile-find-file)
+(evil-leader/set-key "p" 'helm-projectile-switch-project)
+(evil-leader/set-key "sc" 'load-file "~/.emacs.d/init.el")
