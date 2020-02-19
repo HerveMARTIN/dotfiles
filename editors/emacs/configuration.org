@@ -360,12 +360,20 @@ Install Helm first
 #+begin_src emacs-lisp
 	(use-package helm-projectile
 		:bind (("C-S-P" . helm-projectile-switch-project))
-		:bind (("C-x f" . helm-projectile-find-file))
 		:ensure t
 	)
 #+end_src
 
-* Evil Leader key bindings
+Helm find file is slow, doing it with fzf
+
+#+begin_src emacs-lisp
+(use-package fzf
+    :ensure t
+    :bind (("C-x f" . fzf-git))
+)
+#+end_src
+
+** Evil Leader key bindings
 (evil-leader/set-key "f" 'helm-projectile-find-file)
 (evil-leader/set-key "p" 'helm-projectile-switch-project)
 (evil-leader/set-key "sc" 'load-file "~/.emacs.d/init.el")
