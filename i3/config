@@ -285,6 +285,8 @@ mode "resize" {
 
 # Lock screen
 bindsym $mod+Shift+F8 exec --no-startup-id blurlock
+bindsym $mod+F7 exec ~/.screenlayout/mono.sh
+bindsym $mod+F8 exec ~/.screenlayout/default.sh
 
 # Autostart applications
 exec --no-startup-id xrandr --output HDMI1 --off --output DP2 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output VIRTUAL1 --off
