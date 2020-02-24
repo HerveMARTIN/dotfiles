@@ -385,6 +385,7 @@ Helm find file is slow, doing it with fzf
 (evil-leader/set-key "ep" (lambda() (interactive)(find-file "Puppetfile")))
 (evil-leader/set-key "er" (lambda() (interactive)(find-file "Rakefile")))
 (evil-leader/set-key "f" 'fzf-git)
+(evil-leader/set-key "gpl" 'magit-pull-from-upstream)
 (evil-leader/set-key "p" 'helm-projectile-switch-project)
 (evil-leader/set-key "sc" 'org-babel-load-file "~/.emacs.d/configuration.org")
 (evil-leader/set-key "si" 'load-file "~/.emacs.d/init.el")
