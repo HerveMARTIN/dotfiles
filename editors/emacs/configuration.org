@@ -109,59 +109,69 @@ programming.
 ** Theme one-dark
 
 #+begin_src emacs-lisp
-	(use-package one-themes
-  	:init
+  (use-package one-themes
+    :init
     (load-theme 'one-dark t)
-	)
+  )
 #+end_src
 
-
 * =evil-mode=
+
+** Before everything, disable evil keybindings because we're using evil-collection
+
+#+begin_src emacs-lisp
+(setq evil-want-keybinding nil)
+#+end_src
 
 ** Use =leader= for evil
 Before loading evil
 
 #+begin_src emacs-lisp
-  (use-package evil-leader
-    :ensure t
-    :config
-    (global-evil-leader-mode 1)
-	)
-	(evil-leader/set-leader ",")
+(use-package evil-leader
+  :ensure t
+  :config
+  (global-evil-leader-mode 1)
+)
+(evil-leader/set-leader ",")
 #+end_src
 
-See leader bindings paragraph
+See key bindings paragraph
 
 ** Evil core
 #+begin_src emacs-lisp
-  (use-package evil
-    :ensure t ;; install the evil package if not installed
-    :init ;; tweak evil's configuration before loading it
-    (setq evil-search-module 'evil-search)
-    (setq evil-ex-complete-emacs-commands nil)
-    (setq evil-vsplit-window-right t)
-    (setq evil-split-window-below t)
-    (setq evil-shift-round nil)
-    (setq evil-want-C-u-scroll t)
-    :config ;; tweak evil after loading it
-    (evil-mode); Enable evil mode
-  )
+(use-package evil
+  :ensure t ;; install the evil package if not installed
+  :init ;; tweak evil's configuration before loading it
+  (setq evil-search-module 'evil-search)
+  (setq evil-ex-complete-emacs-commands nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (setq evil-shift-round nil)
+  (setq evil-want-C-u-scroll t)
+  :config ;; tweak evil after loading it
+  (evil-mode 1); Enable evil mode
+)
 #+end_src
 
 Install =evil-collection=, which provides evil-friendly bindings for many modes.
 
 #+begin_src emacs-lisp
-  (use-package evil-collection
-    :after evil)
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init)
+)
 #+end_src
 
 Enable =surround= everywhere.
 
 #+begin_src emacs-lisp
-  (use-package evil-surround
-    :ensure t
-    :config
-    (global-evil-surround-mode 1))
+(use-package evil-surround
+  :ensure t
+  :config
+  (global-evil-surround-mode 1)
+)
 #+end_src
 
 
@@ -173,7 +183,7 @@ Use =evil= with Org agendas.
     :config
     (add-hook 'org-mode-hook 'evil-org-mode)
     (add-hook 'evil-org-mode-hook
-              (lambda () (evil-org-set-key-theme)))
+      (lambda () (evil-org-set-key-theme)))
     (require 'evil-org-agenda)
     (evil-org-agenda-set-keys))
 #+end_src
@@ -339,8 +349,8 @@ This configuration:
     (setq ivy-count-format "(%d/%d) ")
     (setq ivy-initial-inputs-alist nil)
     (setq ivy-re-builders-alist
-			'((swiper . ivy--regex-plus)
-				(t . ivy--regex-fuzzy))))
+      '((swiper . ivy--regex-plus)
+        (t . ivy--regex-fuzzy))))
 #+end_src
 
 ** Use Helm Projectile
@@ -349,19 +359,19 @@ Install Helm first
 
 #+begin_src emacs-lisp
 (use-package helm
-	:ensure t
-	:config
-	(helm-mode 1)
-	(setq helm-autoresize-mode t)
-	(global-set-key (kbd "C-x C-f") 'helm-find-files)
+  :ensure t
+  :config
+  (helm-mode 1)
+  (setq helm-autoresize-mode t)
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
 )
 #+end_src
 
 #+begin_src emacs-lisp
-	(use-package helm-projectile
-		:bind (("C-S-P" . helm-projectile-switch-project))
-		:ensure t
-	)
+  (use-package helm-projectile
+    :bind (("C-S-P" . helm-projectile-switch-project))
+    :ensure t
+  )
 #+end_src
 
 Helm find file is slow, doing it with fzf
@@ -373,6 +383,7 @@ Helm find file is slow, doing it with fzf
 )
 #+end_src
 
+* Key bindings
 ** Evil Leader key bindings
 #+begin_src emacs-lisp
 (evil-leader/set-key "bs" 'helm-projectile-switch-to-buffer)
@@ -386,6 +397,7 @@ Helm find file is slow, doing it with fzf
 (evil-leader/set-key "er" (lambda() (interactive)(find-file "Rakefile")))
 (evil-leader/set-key "f" 'fzf-git)
 (evil-leader/set-key "gpl" 'magit-pull-from-upstream)
+(evil-leader/set-key "gps" 'magit-push-current-to-upstream)
 (evil-leader/set-key "p" 'helm-projectile-switch-project)
 (evil-leader/set-key "sc" 'org-babel-load-file "~/.emacs.d/configuration.org")
 (evil-leader/set-key "si" 'load-file "~/.emacs.d/init.el")
