@@ -121,6 +121,7 @@ programming.
 
 #+begin_src emacs-lisp
 (setq evil-want-keybinding nil)
+(setq evil-want-C-i-jump nil)
 #+end_src
 
 ** Use =leader= for evil

@@ -1,3 +1,4 @@
+tmux/plugins/*
 editors/vim/bundle/*
 editors/vim/plugged/*
 editors/vim/backup/*
