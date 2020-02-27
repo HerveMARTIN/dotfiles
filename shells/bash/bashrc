@@ -84,7 +84,9 @@ function sshagent_init {
     #ssh-add -l
 }
 
-sshagent_init
+if [ -t 0 ]; then
+    sshagent_init
+fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
