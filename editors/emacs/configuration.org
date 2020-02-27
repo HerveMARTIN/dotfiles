@@ -384,6 +384,20 @@ Helm find file is slow, doing it with fzf
 )
 #+end_src
 
+* Engine mode
+#+begin_src emacs-lisp
+(use-package engine-mode
+  :config
+  (engine-mode t)
+)
+(defengine duckduckgo
+  "https://duckduckgo.com/?q=%s"
+  :keybinding "d")
+(defengine google
+  "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
+  :keybinding "g")
+#+end_src
+
 * Key bindings
 ** Evil Leader key bindings
 #+begin_src emacs-lisp
