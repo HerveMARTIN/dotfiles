@@ -158,6 +158,9 @@ Write presentation with Org
 
 #+RESULTS:
 
+** Org-capture
+*** TODO
+
 * =evil-mode=
 
 ** Before everything, disable evil keybindings because we're using evil-collection
@@ -427,6 +430,20 @@ Helm find file is slow, doing it with fzf
 )
 #+end_src
 
+* Programming
+** Flycheck
+#+BEGIN_SRC emacs-lisp
+  (use-package exec-path-from-shell
+    :ensure t
+    :if (memq window-system '(mac ns x))
+    :config
+    (setq exec-path-from-shell-variables '("PATH" "GOPATH"))
+    (exec-path-from-shell-initialize))
+  (use-package flycheck
+    :ensure t
+    :init
+    (global-flycheck-mode t))
+#+END_SRC
 * Engine mode
 #+begin_src emacs-lisp
 (use-package engine-mode
@@ -444,22 +461,19 @@ Helm find file is slow, doing it with fzf
 * Key bindings
 ** Evil Leader key bindings
 #+begin_src emacs-lisp
-(evil-leader/set-key "bs" 'helm-projectile-switch-to-buffer)
-(evil-leader/set-key "bc" 'kill-this-buffer)
-(evil-leader/set-key "ec" (lambda() (interactive)(find-file "~/.emacs.d/configuration.org")))
-(evil-leader/set-key "ed" (lambda() (interactive)(find-file "Dockerfile")))
-(evil-leader/set-key "eg" (lambda() (interactive)(find-file "Gemfile")))
-(evil-leader/set-key "ei" (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
-(evil-leader/set-key "ej" (lambda() (interactive)(find-file "Jenkinsfile")))
-(evil-leader/set-key "ep" (lambda() (interactive)(find-file "Puppetfile")))
-(evil-leader/set-key "er" (lambda() (interactive)(find-file "Rakefile")))
-(evil-leader/set-key "f" 'fzf-git)
-(evil-leader/set-key "gpl" 'magit-pull-from-upstream)
-(evil-leader/set-key "gps" 'magit-push-current-to-upstream)
-(evil-leader/set-key "p" 'helm-projectile-switch-project)
-(evil-leader/set-key "sc" 'org-babel-load-file "~/.emacs.d/configuration.org")
-(evil-leader/set-key "si" 'load-file "~/.emacs.d/init.el")
+  (evil-leader/set-key "bs" 'helm-projectile-switch-to-buffer)
+  (evil-leader/set-key "bc" 'kill-this-buffer)
+  (evil-leader/set-key "ec" (lambda() (interactive)(find-file "~/.emacs.d/configuration.org")))
+  (evil-leader/set-key "ed" (lambda() (interactive)(find-file "Dockerfile")))
+  (evil-leader/set-key "eg" (lambda() (interactive)(find-file "Gemfile")))
+  (evil-leader/set-key "ei" (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
+  (evil-leader/set-key "ej" (lambda() (interactive)(find-file "Jenkinsfile")))
+  (evil-leader/set-key "ep" (lambda() (interactive)(find-file "Puppetfile")))
+  (evil-leader/set-key "er" (lambda() (interactive)(find-file "Rakefile")))
+  (evil-leader/set-key "f" 'fzf-git)
+  (evil-leader/set-key "gpl" 'magit-pull-from-upstream)
+  (evil-leader/set-key "gps" 'magit-push-current-to-upstream)
+  (evil-leader/set-key "p" 'helm-projectile-switch-project)
+  (evil-leader/set-key "sc" 'org-babel-load-file "~/.emacs.d/configuration.org")
+  (evil-leader/set-key "si" 'load-file "~/.emacs.d/init.el")
 #+end_src
-
-#+RESULTS:
-*** 
