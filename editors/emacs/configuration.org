@@ -467,6 +467,7 @@ Helm find file is slow, doing it with fzf
 ** Evil Leader key bindings
 #+begin_src emacs-lisp
   (evil-leader/set-key "bs" 'helm-projectile-switch-to-buffer)
+  (evil-leader/set-key "bl" 'helm-buffers-list)
   (evil-leader/set-key "bc" 'kill-this-buffer)
   (evil-leader/set-key "ec" (lambda() (interactive)(find-file "~/.emacs.d/configuration.org")))
   (evil-leader/set-key "ed" (lambda() (interactive)(find-file "Dockerfile")))
