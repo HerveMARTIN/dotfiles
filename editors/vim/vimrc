@@ -153,6 +153,8 @@ nnoremap <leader>r :register<CR>
 " Align blocks of text and keep them selected
 vmap < <gv
 vmap > >gv
+
+" Quick yank/paste from/to system register
 nnoremap <leader>d "_dd
 vnoremap <leader>d "_D
 nnoremap <leader>y "+y
@@ -160,6 +162,9 @@ vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 vnoremap <c-/> :TComment<cr>
+
+" Paste in new line
+:nnoremap P :pu<CR>
 
 " Speed moves
 noremap H ^
