@@ -436,6 +436,10 @@ Helm find file is slow, doing it with fzf
   (use-package puppet-mode
     :mode "\\.pp")
 #+END_SRC
+** Yaml mode
+#+BEGIN_SRC emacs-lisp
+  (use-package yaml-mode)
+#+END_SRC
 ** Flycheck
 #+BEGIN_SRC emacs-lisp
   (use-package exec-path-from-shell
