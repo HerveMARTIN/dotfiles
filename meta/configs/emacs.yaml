@@ -1,2 +1,3 @@
 - link:
-    ~/.emacs.d: editors/emacs
+    ~/.emacs.d: editors/emacs.d
+    ~/.doom.d: editors/doom.d
