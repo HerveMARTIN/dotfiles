@@ -10,3 +10,6 @@
 [submodule "tmux/plugins/tmux-fzf"]
   path = tmux/plugins/tmux-fzf
   url = https://github.com/sainnhe/tmux-fzf
+[submodule "editors/emacs.d"]
+	path = editors/emacs.d
+	url = https://github.com/hlissner/doom-emacs
