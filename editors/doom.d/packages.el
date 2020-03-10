@@ -51,4 +51,4 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 
 (package! puppet-mode)
-(package! fzf-git)
+(package! fzf)
