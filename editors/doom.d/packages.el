@@ -52,3 +52,4 @@
 
 (package! puppet-mode)
 (package! fzf)
+(package! org-fancy-priorities)
