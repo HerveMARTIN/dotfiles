@@ -59,3 +59,6 @@
 (map! :leader
       (:prefix-map ("f" . "file")
         :desc "FZF"       "z"    #'counsel-fzf))
+
+(after! org
+  (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
