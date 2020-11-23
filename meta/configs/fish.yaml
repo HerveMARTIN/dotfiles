@@ -4,5 +4,6 @@
     ~/.config/fish/functions/fisher.fish: shells/fish/functions/fisher.fish
     ~/.config/fish/completions/pass.fish: shells/fish/completions/pass.fish
     ~/.config/omf: shells/fish/omf
+    ~/.config/fish/completions/kubectl.fish: shells/fish/fish-kubectl-completions/completions/kubectl.fish
 - shell:
     - "omf install"

@@ -13,3 +13,6 @@
 [submodule "editors/emacs.d"]
 	path = editors/emacs.d
 	url = https://github.com/hlissner/doom-emacs
+[submodule "shells/fish/fish-kubectl-completions"]
+	path = shells/fish/fish-kubectl-completions
+	url = https://github.com/evanlucas/fish-kubectl-completions
