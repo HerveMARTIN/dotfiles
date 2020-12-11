@@ -310,6 +310,7 @@ exec --no-startup-id i3-msg "workspace $ws2; exec slack"
 exec --no-startup-id i3-msg "workspace $ws3; exec termite"
 exec --no-startup-id i3-msg "workspace $ws4; exec termite"
 exec --no-startup-id feh --bg-center ~/Documents/workspace/dotfiles/wallpapers/normal3.jpg
+exec --no-startup-id setxkbmap -model pc105 -layout fr -variant azerty
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
