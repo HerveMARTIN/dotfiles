@@ -1,5 +1,6 @@
 package fzf
 package https://github.com/danhper/fish-ssh-agent
 package https://github.com/evanlucas/fish-kubectl-completions
+theme bobthefish
 theme default
 theme shellder
