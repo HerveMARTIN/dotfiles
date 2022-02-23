@@ -1,18 +1,24 @@
 [submodule "meta/dotbot"]
 	path = meta/dotbot
 	url = https://github.com/anishathalye/dotbot.git
+  ignore = dirty
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+  ignore = dirty
 [submodule "tmux/plugins/tmux-onedark-theme"]
 	path = tmux/plugins/tmux-onedark-theme
 	url = https://github.com/odedlaz/tmux-onedark-theme
+  ignore = dirty
 [submodule "tmux/plugins/tmux-fzf"]
   path = tmux/plugins/tmux-fzf
   url = https://github.com/sainnhe/tmux-fzf
+  ignore = dirty
 [submodule "editors/emacs.d"]
 	path = editors/emacs.d
 	url = https://github.com/hlissner/doom-emacs
+  ignore = dirty
 [submodule "shells/fish/fish-kubectl-completions"]
 	path = shells/fish/fish-kubectl-completions
 	url = https://github.com/evanlucas/fish-kubectl-completions
+  ignore = dirty
