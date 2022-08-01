@@ -32,6 +32,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'jceb/vim-orgmode'
+Plug 'ctrlpvim/ctrlp.vim'
 " Git tools
 Plug 'Xuyuanp/nerdtree-git-plugin' , { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'tpope/vim-fugitive'
@@ -143,11 +144,14 @@ nnoremap <silent> <leader>ed :e Dockerfile<CR>
 nnoremap <silent> <leader>eg :e Gemfile<CR>
 
 " Buffer management
-nnoremap <C-l> :bn<CR>
-nnoremap <C-h> :bp<CR>
-nnoremap <C-m> :b#<CR>
+nnoremap <c-l> :bn<CR>
+nnoremap <c-h> :bp<CR>
+nmap <c-m> :b#<CR>
+nnoremap <Enter> :b#<CR>
+nnoremap <c-b> :CtrlPBuffer<CR>
 nnoremap <silent> <leader>bd :bd<CR>
 nnoremap <silent> <leader>bc :%bd<CR><C-O>:bd#<CR><CR>
+nnoremap <silent> <leader>l :b#<CR>
 
 " Registers
 nnoremap <leader>r :register<CR>
