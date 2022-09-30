@@ -10,7 +10,7 @@
 | `C-r` | search in history |
 | `C-t` | search in files |
 # Vim
-![cheats](http://www.nathael.org/Data/vi-vim-cheat-sheet.svg)
+![cheats](https://flatcap.org/vim/vi-vim-cheat-sheet-uk.png)
 
 | Key Binding | Description |
 | --- | --- |
