@@ -203,6 +203,7 @@ assign [class="Pcmanfm"] $ws8
 # assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
+for_window [class="^.*"] border pixel 1
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
