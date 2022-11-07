@@ -1,5 +1,6 @@
 set shell=/bin/bash
 set nocompatible              " be iMproved, required
+set mouse=
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
