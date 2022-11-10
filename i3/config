@@ -310,7 +310,6 @@ exec --no-startup-id i3-msg "workspace $ws1; exec google-chrome-stable"
 exec --no-startup-id i3-msg "workspace $ws2; exec slack"
 exec --no-startup-id i3-msg "workspace $ws3; exec termite"
 exec --no-startup-id i3-msg "workspace $ws4; exec termite"
-exec --no-startup-id feh --bg-center ~/Documents/workspace/dotfiles/wallpapers/galibier.jpg
 exec --no-startup-id setxkbmap -model pc105 -layout fr -variant azerty
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -444,3 +443,4 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+exec --no-startup-id feh --bg-center ~/Documents/workspace/dotfiles/wallpapers/galibier.jpg
