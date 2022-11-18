@@ -20,6 +20,30 @@ keymap.set("n", "K", "10kzz")
 keymap.set("n", "H", "^")
 keymap.set("n", "L", "g_")
 
+-- quick edit common files
+keymap.set("n", "<leader>ep", ":e Puppetfile<CR>")
+keymap.set("n", "<leader>ej", ":e Jenkinsfile<CR>")
+keymap.set("n", "<leader>er", ":e Raklefile<CR>")
+keymap.set("n", "<leader>ed", ":e Dockerfile<CR>")
+keymap.set("n", "<leader>eg", ":e Gemfile<CR>")
+keymap.set("n", "<leader>ec", ":e $MYVIMRC<CR>")
+keymap.set("n", "<leader>ek", ":e $XDG_CONFIG_HOME/nvim/lua/core/keymaps.lua<CR>")
+
+-- source common files
+keymap.set("n", "<leader>sc", ":source $MYVIMRC<CR>")
+
+-- buffer management
+keymap.set("n", "<c-l>", ":bn<CR>")
+keymap.set("n", "<c-h>", ":bp<CR>")
+keymap.set("n", "<c-m>", ":b#<CR>")
+keymap.set("n", "<Enter>", ":b#<CR>")
+keymap.set("n", "<leader>bd", ":bd<CR>")
+keymap.set("n", "<leader>bc", ":%bd<CR><C-O>:bd#<CR><CR>")
+
+-- quick indent
+keymap.set("v", "<", "<gv")
+keymap.set("v", ">", ">gv")
+
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
 
@@ -46,7 +70,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set("n", "<space>", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
