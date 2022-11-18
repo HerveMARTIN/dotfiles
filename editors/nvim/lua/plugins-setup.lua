@@ -32,6 +32,11 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- essential plugins
+  -- lua functions that many plugins use
+  use("nvim-lua/plenary.nvim")
+  -- preferred colorscheme
+  use("bluz71/vim-nightfly-guicolors")
+
   -- add, delete, change surroundings (it's awesome)
   use("tpope/vim-surround")
   -- help ending structure
@@ -55,6 +60,15 @@ return packer.startup(function(use)
   use("hrsh7th/nvim-cmp") -- completion plugin
   use("hrsh7th/cmp-buffer") -- source for text in buffer
   use("hrsh7th/cmp-path") -- source for file system paths
+
+  -- treesitter configuration
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+  })
 
   -- auto closing
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
