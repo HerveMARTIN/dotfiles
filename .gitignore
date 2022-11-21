@@ -6,6 +6,7 @@ editors/vim/swap/*
 editors/vim/undo/*
 editors/vim/init.vim
 editors/nvim/plugin/packer_compiled.lua
+editors/lvim/plugin/packer_compiled.lua
 editors/emacs/
 editors/emacs/custom.el
 editors/vim/.netrwhist
