@@ -44,6 +44,11 @@ lvim.keys.normal_mode["<leader>eg"] = ":e Gemfile<CR>"
 -- LuaLine statusbar
 local components = require("lvim.core.lualine.components")
 
+lvim.builtin.lualine.options.theme = "nightfly"
+-- lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
+-- lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
+
+
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_c = { { "filename", path = 1 } }
 lvim.builtin.lualine.sections.lualine_y = {
