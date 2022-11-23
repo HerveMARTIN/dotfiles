@@ -11,7 +11,7 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
-lvim.colorscheme = "onedarkpro"
+lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -44,7 +44,7 @@ lvim.keys.normal_mode["<leader>eg"] = ":e Gemfile<CR>"
 -- LuaLine statusbar
 local components = require("lvim.core.lualine.components")
 
-lvim.builtin.lualine.options.theme = "onedark"
+-- lvim.builtin.lualine.options.theme = "purify"
 -- lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
 -- lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
 
@@ -215,14 +215,6 @@ lvim.plugins = {
   {
     "rodjek/vim-puppet",
   },
-  {
-    "olimorris/onedarkpro.nvim",
-    config = function()
-      require("onedarkpro").setup({
-        dark_theme = "onedark_dark",
-      })
-    end,
-  }
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
