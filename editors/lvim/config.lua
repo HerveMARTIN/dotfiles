@@ -29,11 +29,11 @@ lvim.keys.insert_mode["jk"] = "<ESC>"
 lvim.lsp.buffer_mappings.normal_mode["K"] = nil
 lvim.keys.normal_mode["J"] = "10jzz"
 lvim.keys.normal_mode["K"] = "10kzz"
-lvim.keys.normal_mode["<leader>ep"] = ":e Puppetfile<CR>"
-lvim.keys.normal_mode["<leader>ej"] = ":e Jenkinsfile<CR>"
-lvim.keys.normal_mode["<leader>er"] = ":e Rakefile<CR>"
-lvim.keys.normal_mode["<leader>ed"] = ":e Dockerfile<CR>"
-lvim.keys.normal_mode["<leader>eg"] = ":e Gemfile<CR>"
+lvim.keys.normal_mode["<leader>op"] = ":e Puppetfile<CR>"
+lvim.keys.normal_mode["<leader>oj"] = ":e Jenkinsfile<CR>"
+lvim.keys.normal_mode["<leader>or"] = ":e Rakefile<CR>"
+lvim.keys.normal_mode["<leader>od"] = ":e Dockerfile<CR>"
+lvim.keys.normal_mode["<leader>og"] = ":e Gemfile<CR>"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -205,6 +205,14 @@ linters.setup {
     filetypes = { "javascript", "python" },
   },
 }
+
+local au = vim.api.nvim_create_autocmd
+au({ 'BufNewFile', 'BufRead' }, {
+  'Puppetfile',
+  function()
+    vim.bo.filetype = 'puppet'
+  end,
+})
 
 -- Additional Plugins
 lvim.plugins = {
