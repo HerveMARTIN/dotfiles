@@ -2,5 +2,6 @@ name: <%= @args[0] %>
 root: ~/Documents/workspace/<%= @args[0] %>
 
 windows:
-  - editor: nvim
+  - LunarVim: lvim
+  - NeoVim: nvim
   - shell: git pull
