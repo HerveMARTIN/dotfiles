@@ -130,13 +130,13 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
-
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
   "sumneko_lua",
   "jsonls",
+  "puppet",
 }
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
@@ -206,14 +206,6 @@ linters.setup {
   },
 }
 
-local au = vim.api.nvim_create_autocmd
-au({ 'BufNewFile', 'BufRead' }, {
-  'Puppetfile',
-  function()
-    vim.bo.filetype = 'puppet'
-  end,
-})
-
 -- Additional Plugins
 lvim.plugins = {
   {
@@ -221,7 +213,39 @@ lvim.plugins = {
     cmd = "TroubleToggle",
   },
   {
+    "ggandor/lightspeed.nvim",
+    event = "BufRead",
+  },
+  {
     "rodjek/vim-puppet",
+  },
+  {
+    "echasnovski/mini.map",
+    branch = "stable",
+    config = function()
+      require('mini.map').setup()
+      local map = require('mini.map')
+      map.setup({
+        integrations = {
+          map.gen_integration.builtin_search(),
+          map.gen_integration.diagnostic({
+            error = 'DiagnosticFloatingError',
+            warn  = 'DiagnosticFloatingWarn',
+            info  = 'DiagnosticFloatingInfo',
+            hint  = 'DiagnosticFloatingHint',
+          }),
+        },
+        symbols = {
+          encode = map.gen_encode_symbols.dot('4x2'),
+        },
+        window = {
+          side = 'right',
+          width = 20, -- set to 1 for a pure scrollbar :)
+          winblend = 15,
+          show_integration_count = false,
+        },
+      })
+    end
   },
 }
 
