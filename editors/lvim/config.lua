@@ -130,6 +130,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
@@ -222,6 +223,9 @@ lvim.plugins = {
   {
     "sindrets/diffview.nvim",
     event = "BufRead",
+  },
+  {
+    "mrjones2014/nvim-ts-rainbow",
   },
 }
 
