@@ -1,6 +1,7 @@
 - link:
     ~/.vim: editors/vim
     ~/.config/nvim: editors/vim
+    ~/.config/lvim: editors/lvim
     ~/.vimrc: editors/vim/vimrc
     ~/.vimrc.go: editors/vim/vimrc.go
     ~/.config/nvim/init.vim: editors/vim/vimrc
