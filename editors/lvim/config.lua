@@ -227,6 +227,9 @@ lvim.plugins = {
   {
     "mrjones2014/nvim-ts-rainbow",
   },
+  {
+    "tpope/vim-surround",
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
