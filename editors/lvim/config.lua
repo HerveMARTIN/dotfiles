@@ -8,8 +8,12 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.relativenumber = true
+
 -- general
-lvim.log.level = "warn"
+lvim.log.level = "info"
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "lunar"
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -52,32 +56,35 @@ local components = require("lvim.core.lualine.components")
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_c = { { "filename", path = 1 } }
 lvim.builtin.lualine.sections.lualine_y = {
-  components.spaces,
-  components.location
+    components.spaces,
+    components.location
 }
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope = {
-  active = true,
-  defaults = {
-    layout_strategy = "horizontal",
-  }
+    active = true,
+    defaults = {
+        layout_strategy = "horizontal",
+        layout_config = {
+            width = 0.80,
+        },
+    },
 }
 lvim.builtin.telescope.defaults.mappings = {
-  -- for input mode
-  i = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-    ["<C-n>"] = actions.cycle_history_next,
-    ["<C-p>"] = actions.cycle_history_prev,
-  },
-  -- for normal mode
-  n = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-  },
+    -- for input mode
+    i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+    },
+    -- for normal mode
+    n = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+    },
 }
 
 -- Change theme settings
@@ -87,13 +94,13 @@ lvim.builtin.telescope.defaults.mappings = {
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+    name = "+Trouble",
+    r = { "<cmd>Trouble lsp_references<cr>", "References" },
+    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+    d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+    w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
 lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope git_files<cr>", "Find File" }
 
@@ -107,18 +114,18 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "java",
+    "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -128,8 +135,8 @@ lvim.builtin.treesitter.rainbow.enable = true
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
-  "jsonls",
-  "puppet",
+    "jsonls",
+    "puppet",
 }
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
@@ -184,44 +191,44 @@ lvim.lsp.installer.setup.ensure_installed = {
 -- set additional linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-  { command = "flake8", filetypes = { "python" } },
-  {
-    -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
-    command = "shellcheck",
-    ---@usage arguments to pass to the formatter
-    -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
-    extra_args = { "--severity", "warning" },
-  },
-  {
-    command = "codespell",
-    ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
-    filetypes = { "javascript", "python" },
-  },
+    { command = "flake8", filetypes = { "python" } },
+    {
+        -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
+        command = "shellcheck",
+        ---@usage arguments to pass to the formatter
+        -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
+        extra_args = { "--severity", "warning" },
+    },
+    {
+        command = "codespell",
+        ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+        filetypes = { "javascript", "python" },
+    },
 }
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
-  {
-    "ggandor/lightspeed.nvim",
-    event = "BufRead",
-  },
-  {
-    "rodjek/vim-puppet",
-  },
-  {
-    "sindrets/diffview.nvim",
-    event = "BufRead",
-  },
-  {
-    "mrjones2014/nvim-ts-rainbow",
-  },
-  {
-    "tpope/vim-surround",
-  },
+    {
+        "folke/trouble.nvim",
+        cmd = "TroubleToggle",
+    },
+    {
+        "ggandor/lightspeed.nvim",
+        event = "BufRead",
+    },
+    {
+        "rodjek/vim-puppet",
+    },
+    {
+        "sindrets/diffview.nvim",
+        event = "BufRead",
+    },
+    {
+        "mrjones2014/nvim-ts-rainbow",
+    },
+    {
+        "tpope/vim-surround",
+    },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
