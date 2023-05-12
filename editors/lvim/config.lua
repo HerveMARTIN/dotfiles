@@ -63,14 +63,6 @@ lvim.builtin.telescope = {
   active = true,
   defaults = {
     layout_strategy = "horizontal",
-  },
-  pickers = {
-    git_files = {
-      hidden = true,
-    },
-    live_grep = {
-      hidden = true,
-    }
   }
 }
 lvim.builtin.telescope.defaults.mappings = {
@@ -103,6 +95,7 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
+lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope git_files<cr>", "Find File" }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -135,7 +128,6 @@ lvim.builtin.treesitter.rainbow.enable = true
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
-  "sumneko_lua",
   "jsonls",
   "puppet",
 }

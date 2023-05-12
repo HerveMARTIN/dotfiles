@@ -14,3 +14,4 @@ editors/vim/.netrwhist
 !editors/emacs/init.el
 !editors/emacs/resources
 !editors/emacs/snippets
+!editors/lvim/lazy-lock.json
