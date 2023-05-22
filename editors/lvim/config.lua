@@ -217,9 +217,6 @@ lvim.plugins = {
         event = "BufRead",
     },
     {
-        "rodjek/vim-puppet",
-    },
-    {
         "sindrets/diffview.nvim",
         event = "BufRead",
     },
