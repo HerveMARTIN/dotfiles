@@ -232,6 +232,9 @@ lvim.plugins = {
   {
     "ElPiloto/telescope-vimwiki.nvim",
   },
+  {
+    "tbabej/taskwiki",
+  },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
