@@ -187,7 +187,13 @@ lvim.lsp.installer.setup.ensure_installed = {
 --     filetypes = { "typescript", "typescriptreact" },
 --   },
 -- }
-
+-- local null_ls = require "lvim.lsp.null-ls"
+-- null_ls.setup {
+--   sources = {
+--     null_ls.builtins.diagnostics.puppet_lint,
+--     null_ls.builtins.formatting.puppet_lint,
+--   }
+-- }
 -- set additional linters
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
