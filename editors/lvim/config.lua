@@ -243,6 +243,12 @@ lvim.plugins = {
   },
 }
 
+vim.filetype.add({
+  filename = {
+    ['Jenkinsfile'] = 'groovy',
+  }
+})
+
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
