@@ -246,6 +246,7 @@ lvim.plugins = {
 vim.filetype.add({
   filename = {
     ['Jenkinsfile'] = 'groovy',
+    ['Puppetfile'] = 'puppet',
   }
 })
 
