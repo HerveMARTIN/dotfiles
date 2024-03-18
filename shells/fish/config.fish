@@ -58,3 +58,6 @@ if type -q neofetch
     neofetch
   end
 end
+
+# Scaleway CLI autocomplete initialization.
+eval (scw autocomplete script shell=fish)
