@@ -1,10 +1,11 @@
 - link:
     ~/.config/fish/config.fish: shells/fish/config.fish
     ~/.config/fish/abbr.fish: shells/fish/abbr.fish
+    ~/.config/fish/fish_plugins: shells/fish/fish_plugins
     ~/.config/fish/functions/fisher.fish: shells/fish/functions/fisher.fish
     ~/.config/fish/completions/fisher.fish: shells/fish/completions/fisher.fish
     ~/.config/fish/completions/pass.fish: shells/fish/completions/pass.fish
-    ~/.config/omf: shells/fish/omf
+    # ~/.config/omf: shells/fish/omf
     ~/.config/fish/completions/kubectl.fish: shells/fish/fish-kubectl-completions/completions/kubectl.fish
 - shell:
-    - "omf install"
+    - "fisher update"

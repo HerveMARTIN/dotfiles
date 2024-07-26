@@ -22,6 +22,9 @@ set -g -x PATH $PATH (ruby -e 'print Gem.user_dir')/bin
 
 set -g -x fish_greeting ''
 
+# Tide theme
+set -g tide_git_icon ''
+
 # enable vi mode
 # set -g fish_key_bindings fish_vi_key_bindings
 
