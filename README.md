@@ -64,4 +64,4 @@ meta/configs/
 ### Vim inside tmux
 ![tmux-vim](meta/screenshots/tmux-vim.png)
 
-# TODO
+# Test
