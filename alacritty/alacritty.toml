@@ -16,3 +16,8 @@ option_as_alt = "Both"
 normal.family = "MesloLGS Nerd Font Mono"
 
 size = 12
+
+# [[keyboard.bindings]]
+# key = "L"
+# mods = "Alt"
+# chars = "\x7C"
