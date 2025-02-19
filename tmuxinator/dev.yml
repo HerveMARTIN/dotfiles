@@ -3,5 +3,6 @@ root: ~/Documents/workspace/<%= @args[0] %>
 
 windows:
   - LunarVim: lvim
+  - AstroNVim: astronvim
   - NeoVim: nvim
   - shell: git pull
