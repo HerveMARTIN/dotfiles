@@ -44,3 +44,6 @@ abbr --add sc 'source ~/.config/fish/config.fish'
 abbr --add ddgo 'sr duckduckgo'
 abbr --add ggl 'sr google'
 abbr --add yt 'sr youtube'
+
+# Astronvim
+abbr --add astronvim 'env NVIM_APPNAME=astronvim nvim'
