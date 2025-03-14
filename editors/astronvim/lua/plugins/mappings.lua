@@ -18,6 +18,10 @@ return {
           ["<leader>og"] = { ":e Gemfile<CR>", desc = "Open Gemfile" },
           ["<leader>rc"] = { ":AstroReload<CR>", desc = "Reload Astro Config" },
         },
+        i = {
+          ["<C-l>"] = { "<ESC>:bn<CR>", desc = "Buffer on the right" },
+          ["<C-h>"] = { "<ESC>:bp<CR>", desc = "Buffer on the left" },
+        },
       },
     },
   },
