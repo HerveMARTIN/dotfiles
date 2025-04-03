@@ -2,7 +2,7 @@ name: <%= @args[0] %>
 root: ~/Documents/workspace/<%= @args[0] %>
 
 windows:
-  - LunarVim: lvim
   - AstroNVim: astronvim
+  - LunarVim: lvim
   - NeoVim: nvim
   - shell: git pull
