@@ -5,4 +5,5 @@ windows:
   - AstroNVim: astronvim
   - LunarVim: lvim
   - NeoVim: nvim
+  - LazyGit: lazygit
   - shell: git pull
