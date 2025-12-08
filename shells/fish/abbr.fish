@@ -47,3 +47,6 @@ abbr --add yt 'sr youtube'
 
 # Astronvim
 abbr --add astronvim 'env NVIM_APPNAME=astronvim nvim'
+
+# Dig
+abbr --add digs 'dig --short'
