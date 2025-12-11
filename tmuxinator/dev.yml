@@ -6,4 +6,5 @@ windows:
   - LunarVim: lvim
   - NeoVim: nvim
   - LazyGit: lazygit
+  - OpenCode: opencode
   - shell: git pull
