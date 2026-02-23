@@ -15,3 +15,13 @@ vim.filetype.add {
     ["~/%.config/foo/.*"] = "fooscript",
   },
 }
+
+-- Désactiver le formatage automatique pour les fichiers Puppetfile
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "ruby",
+  callback = function()
+    if vim.fn.expand("%:t") == "Puppetfile" then
+      vim.b.autoformat = false
+    end
+  end,
+})

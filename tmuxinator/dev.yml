@@ -3,7 +3,6 @@ root: ~/Documents/workspace/<%= @args[0] %>
 
 windows:
   - AstroNVim: astronvim
-  - LunarVim: lvim
   - NeoVim: nvim
   - LazyGit: lazygit
   - OpenCode: opencode --agent OpenAgent
