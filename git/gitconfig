@@ -3,6 +3,7 @@
     name = Herve MARTIN
 [push]
     default = current
+    autoSetupRemote = true
 [color]
     ui = auto
 [alias]

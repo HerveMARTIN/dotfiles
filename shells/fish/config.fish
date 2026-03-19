@@ -64,3 +64,8 @@ end
 
 # Scaleway CLI autocomplete initialization.
 eval (scw autocomplete script shell=fish)
+
+# Google Cloud SDK
+if test -f /opt/homebrew/share/google-cloud-sdk/path.fish.inc
+  source /opt/homebrew/share/google-cloud-sdk/path.fish.inc
+end
