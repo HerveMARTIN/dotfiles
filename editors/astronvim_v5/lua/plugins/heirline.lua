@@ -83,7 +83,7 @@ return {
         -- add a section for the currently opened file information
         status.component.file_info {
           -- enable the file_icon and disable the highlighting based on filetype
-          filename = { fallback = "Empty" },
+          filename = { modify = ":~:." },
           -- disable some of the info
           filetype = false,
           file_read_only = false,
