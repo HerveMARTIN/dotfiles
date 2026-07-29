@@ -9,7 +9,7 @@
       },
       {
         "id": "3",
-        "type": "context-length",
+        "type": "context-bar",
         "color": "brightBlack"
       },
       {
@@ -71,6 +71,7 @@
   "defaultPadding": " ",
   "inheritSeparatorColors": false,
   "globalBold": false,
+  "gitCacheTtlSeconds": 5,
   "minimalistMode": false,
   "powerline": {
     "enabled": true,

@@ -5,5 +5,5 @@ windows:
   - AstroNVim: astronvim
   - NeoVim: nvim
   - LazyGit: lazygit
-  - OpenCode: opencode --agent OpenAgent
+  - Claude: claude-pro
   - shell: git pull

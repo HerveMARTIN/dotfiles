@@ -1,2 +1,4 @@
 .DS_Store
 tmux-client*.log
+
+**/.claude/settings.local.json
