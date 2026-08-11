@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#
+# Entry point for the Puppet toolchain. Linked to ~/.local/bin/puppet and
+# ~/.local/bin/puppet-lint, and dispatches on the name it was invoked under.
+#
+# Two things make the wrapper necessary:
+#
+#   - Puppet 8 requires Ruby >= 3.1 while /usr/bin/ruby is still 2.6, so the
+#     gems live under Homebrew's keg-only ruby@3.2 in a GEM_HOME of their own.
+#   - Homebrew's tmuxinator wrapper exports GEM_HOME=<cellar>/tmuxinator/*/libexec
+#     before starting the tmux server, and every pane inherits it. Any gem
+#     binstub run from tmux then resolves against tmuxinator's vendored gems --
+#     which is how `puppet-lint` ended up loading a Ruby 3.1+ gem under Ruby 2.6
+#     and dying with a SyntaxError on every call.
+#
+# Install or refresh the gems with puppet/install-gems.
+
+set -euo pipefail
+
+GEM_HOME="${HOME}/.gem/puppet"
+export GEM_HOME
+unset GEM_PATH
+
+cmd="${0##*/}"
+target="${GEM_HOME}/bin/${cmd}"
+
+if [ ! -x "${target}" ]; then
+  echo "${cmd}: not installed in ${GEM_HOME}. See the header of $0 for the install command." >&2
+  exit 127
+fi
+
+exec "${target}" "$@"

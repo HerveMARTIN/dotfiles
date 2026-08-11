@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+#
+# Installs the Puppet toolchain that puppet/bin/gem-wrapper exposes as
+# ~/.local/bin/puppet and ~/.local/bin/puppet-lint. Safe to re-run.
+#
+# It lives in a GEM_HOME of its own because Puppet needs Ruby >= 3.1 while
+# /usr/bin/ruby is still 2.6 -- see the header of puppet/bin/gem-wrapper.
+#
+# The puppet-lint plugins mirror the `# Validate` block of the Gemfile in
+# nf_puppet_central so the editor reports the same checks as CI. Note that CI
+# builds on ruby:2.7.6 with puppet pinned to 7.33.0, which Ruby 3.2 cannot run;
+# we track puppet 8 here instead. Manifests that parse under one and not the
+# other are rare but possible.
+
+set -euo pipefail
+
+RUBY_PREFIX="${RUBY_PREFIX:-/opt/homebrew/opt/ruby@3.2}"
+
+if [ ! -x "${RUBY_PREFIX}/bin/gem" ]; then
+  echo "no gem at ${RUBY_PREFIX}/bin/gem -- run: brew install ruby@3.2" >&2
+  exit 1
+fi
+
+export GEM_HOME="${HOME}/.gem/puppet"
+unset GEM_PATH
+
+"${RUBY_PREFIX}/bin/gem" install --no-document \
+  'puppet:8.10.0' \
+  puppet-lint \
+  puppet-lint-absolute_classname-check \
+  puppet-lint-empty_string-check \
+  puppet-lint-file_ensure-check \
+  puppet-lint-leading_zero-check \
+  puppet-lint-spaceship_operator_without_tag-check \
+  puppet-lint-strict_indent-check \
+  puppet-lint-trailing_comma-check \
+  puppet-lint-unquoted_string-check \
+  puppet-lint-variable_contains_upcase
+
+echo
+echo "installed into ${GEM_HOME}"
+"${GEM_HOME}/bin/puppet" --version | sed 's/^/  puppet /'
+"${GEM_HOME}/bin/puppet-lint" --version | sed 's/^/  /'
+echo "  $("${GEM_HOME}/bin/puppet-lint" --list-checks | wc -w | tr -d ' ') checks available"

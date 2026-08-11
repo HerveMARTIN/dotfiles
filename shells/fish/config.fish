@@ -6,6 +6,15 @@ if test -d $HOME/.local/bin
   set -g -x PATH $HOME/.local/bin $PATH
 end
 
+# Homebrew wraps gem-based formulae in a shim that exports GEM_HOME pointing
+# into the Cellar. tmuxinator is one of them, and since it is what starts the
+# tmux server, every pane -- and every editor launched from a pane -- inherits
+# it. Left in place, `gem` and every gem binstub resolve against that formula's
+# vendored gems instead of ours. Drop it; nothing here wants a Cellar GEM_HOME.
+if set -q GEM_HOME; and string match -q '*/Cellar/*' -- $GEM_HOME
+  set -e GEM_HOME
+end
+
 if test -d /usr/local/opt/ruby/bin
   set -g -x PATH /usr/local/opt/ruby/bin $PATH
 end
